@@ -3,10 +3,10 @@
 이 파일은 Gemini CLI가 다음 세션에서도 기억하고 따라야 할 핵심 행동 지침 및 기획 내용입니다.
 
 ## 1. 프로젝트 개요
-- **목적:** 5년 차 백엔드 개발자(김영웅 님)의 포트폴리오 웹사이트 구축
+- **목적:** 백엔드 개발자(최은진 님)의 포트폴리오 웹사이트 구축
 - **디자인 컨셉:** 모던 미니멀리즘 (Modern Minimal) - 화이트 톤, 부드러운 애니메이션, 높은 가독성
 - **기술 스택:** React (Vite 기반) + TypeScript + Tailwind CSS + Framer Motion
-- **저장소:** https://github.com/KimYoungUng74/heroStack.git
+- **저장소:** https://github.com/eunjinchoi95/eunjinstack.git
 
 ## 2. 작업 내역 및 다음 단계 (Phase 1)
 - 사용자의 Notion 마크다운 경력기술서를 분석하여 단일 페이지(SPA) 구조의 기획을 완료했습니다.

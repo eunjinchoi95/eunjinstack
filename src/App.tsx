@@ -52,7 +52,7 @@ function App() {
             </motion.div>
             
             <motion.h1 variants={itemVariants} className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-none">
-              KIM <span className="text-primary italic">YOUNG UNG</span>
+              CHOI <span className="text-primary italic">EUN JIN</span>
             </motion.h1>
 
             <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-8 tracking-tight leading-tight whitespace-pre-line max-w-4xl">

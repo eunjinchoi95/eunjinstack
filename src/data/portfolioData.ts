@@ -71,9 +71,9 @@ import blogBuddy from '../assets/project_details/naverBuddy.webp';
 
 export const portfolioData = {
   hero: {
-    greeting: "안녕하세요,\n6년 차 백엔드 개발자 김영웅입니다.",
+    greeting: "안녕하세요,\n백엔드 개발자 최은진입니다.",
     description: "주로 Java/Spring 기반 위에 Oracle과 Redis를 활용하고, \n새로운 기술들에 관심이 많으며, 문제 해결하는 것을 즐깁니다.",
-    github: "https://github.com/KimYoungUng74",
+    github: "https://github.com/eunjinchoi95",
     blog: "https://backhero.tistory.com/",
     icons: {
       github: githubIcon,

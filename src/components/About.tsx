@@ -68,10 +68,9 @@ export default function About() {
             <div className="relative aspect-square w-full max-w-[320px] md:max-w-[420px] lg:max-w-full bg-foreground/5 text-background rounded-[2.5rem] overflow-hidden shadow-2xl group border border-foreground/5">
                 <img
                   src={profileImage}
-                  alt="KIM YOUNG UNG"
+                  alt="CHOI EUN JIN"
                   className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 border-[8px] border-white/10 rounded-[2.5rem] pointer-events-none"></div>
+                />                <div className="absolute inset-0 border-[8px] border-white/10 rounded-[2.5rem] pointer-events-none"></div>
             </div>
           </motion.div>
           
