@@ -62,7 +62,7 @@ export default function Skills({ skills }: SkillsProps) {
   };
 
   return (
-    <section className="py-24 bg-background text-foreground border-t border-foreground/5">
+    <section id="skills" className="py-24 bg-background text-foreground border-t border-foreground/5">
       <div className="container mx-auto px-6 md:px-12 max-w-6xl">
         <div className="mb-16">
           <h2 className="text-4xl font-black tracking-tight uppercase">

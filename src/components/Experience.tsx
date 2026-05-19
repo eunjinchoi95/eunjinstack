@@ -42,7 +42,7 @@ export default function Experience({ projects }: ExperienceProps) {
   const categories = ["01. 학교 프로젝트", "02. 국보디자인 프로젝트", "03. 코스펙에이비 프로젝트", "04. 한맥아이티 프로젝트"];
   
   return (
-    <section id="projects" className="py-24 bg-background text-foreground transition-colors duration-500">
+    <section id="experience" className="py-24 bg-background text-foreground transition-colors duration-500">
       <div className="container mx-auto px-6 md:px-12 max-w-6xl">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

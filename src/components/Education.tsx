@@ -5,7 +5,7 @@ export default function Education() {
   const { education } = portfolioData;
 
   return (
-    <section className="py-24 bg-foreground text-background transition-colors duration-500 overflow-hidden">
+    <section id="education" className="py-24 bg-foreground text-background transition-colors duration-500 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           

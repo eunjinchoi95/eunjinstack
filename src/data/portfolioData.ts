@@ -22,15 +22,15 @@ import hanmacImg4 from '../assets/projects/04_hanmac/(높이오타있음(2520))2
 
 export const portfolioData = {
   hero: {
-    greeting: "안녕하세요,\n3D 디자이너 최은진입니다.",
+    greeting: "안녕하세요!\n3D 디자이너 최은진입니다.",
     description: "실내건축디자인 전공을 기반으로 인테리어 설계, 건축 CG, \nLED 설계까지 공간을 시각화하고 구현하는 6년 차 디자이너입니다.",
     icons: {
     }
   },
   about: {
-    location: "대한민국, 서울 성동구",
+    location: "서울 성동구 성수동",
     contact: "jin0946@gmail.com | 010-8207-0946",
-    mbti: "ESTJ-A",
+    mbti: "ENTJ",
     summary: [
       "실내건축디자인 전공 이후 인테리어 설계, 건축 CG, LED 설계 및 디자인 업무까지 약 5년 이상의 실무 경험을 쌓아왔습니다.",
       "AutoCAD, SketchUp, 3dsMax, Photoshop, V-Ray 등을 활용한 도면 작업 및 3D 시안 제작이 가능하며, 공간을 실제 구현 가능한 형태로 시각화하는 업무에 강점을 가지고 있습니다.",
@@ -67,7 +67,7 @@ export const portfolioData = {
       id: 2,
       company: "코스펙에이비",
       logo: undefined,
-      role: "CG · 대리",
+      role: "CG팀 · 대리",
       period: "2021.01 - 2024.01",
       description: "건축 및 인테리어 프로젝트 CG 업무, 다양한 프로그램을 활용한 투시도 및 시각화 작업, 설계 도면 기반 3D 모델링",
     },
@@ -75,7 +75,7 @@ export const portfolioData = {
       id: 3,
       company: "국보디자인",
       logo: undefined,
-      role: "인테리어사업본부 · 사원/팀원",
+      role: "인테리어사업본부 · 사원",
       period: "2019.04 - 2020.03",
       description: "인테리어 설계 및 3D 샵드로잉, 제주 드림타워 복합리조트(1F 로비, 2F 카지노, 4층 마이스) 샵드로잉 및 3D 작업",
     }
@@ -129,12 +129,12 @@ export const portfolioData = {
   education: [
     {
       id: 1,
-      title: "인덕대학교 - 실내건축디자인과 (2·3년제)",
+      title: "인덕대학교 - 실내건축디자인과",
       period: "2015.03 - 2018.02 졸업"
     },
     {
       id: 2,
-      title: "청원여자고등학교 - 예체능계 미술",
+      title: "청원여자고등학교",
       period: "2011.03 - 2014.02 졸업"
     }
   ],

@@ -1,8 +1,8 @@
-import { ArrowRight } from 'lucide-react';
 import { motion, type Variants } from 'framer-motion';
 import { portfolioData } from './data/portfolioData';
 
 // Placeholder imports until we port the actual components
+import Navbar from './components/Navbar';
 import About from './components/About';
 import Education from './components/Education';
 import Skills from './components/Skills';
@@ -32,7 +32,9 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground">
+    <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-500">
+      <Navbar />
+      
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center min-h-[calc(100vh-64px)] px-6 overflow-hidden relative">
         {/* Background decorative elements */}
@@ -47,7 +49,7 @@ function App() {
         >
           <div className="flex flex-col items-center text-center space-y-8">
             <motion.div variants={itemVariants} className="inline-block px-4 py-1.5 bg-foreground text-background rounded-full text-xs font-bold tracking-widest uppercase mb-4 shadow-lg">
-              3D Designer
+              PORTFOLIO
             </motion.div>
             
             <motion.h1 variants={itemVariants} className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-none">
@@ -69,22 +71,6 @@ function App() {
             <motion.p variants={itemVariants} className="max-w-[700px] text-lg md:text-xl opacity-50 font-medium leading-relaxed whitespace-pre-line mt-6">
               {data.hero.description}
             </motion.p>
-            
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 pt-8">
-              <a 
-                href="#projects" 
-                className="group flex items-center gap-3 px-10 py-5 bg-foreground text-background rounded-full font-black hover:bg-primary hover:text-white transition-all duration-500 shadow-2xl hover:shadow-primary/40 uppercase tracking-widest text-sm"
-              >
-                Career Experience
-                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a 
-                href="#about" 
-                className="px-10 py-5 border-2 border-foreground/10 text-foreground rounded-full font-black hover:bg-foreground hover:text-background transition-all duration-500 uppercase tracking-widest text-sm backdrop-blur-sm"
-              >
-                About Me
-              </a>
-            </motion.div>
             
           </div>
         </motion.div>
