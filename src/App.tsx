@@ -7,7 +7,6 @@ import About from './components/About';
 import Education from './components/Education';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
-import Extra from './components/Extra';
 
 function App() {
   const data = portfolioData;
@@ -48,7 +47,7 @@ function App() {
         >
           <div className="flex flex-col items-center text-center space-y-8">
             <motion.div variants={itemVariants} className="inline-block px-4 py-1.5 bg-foreground text-background rounded-full text-xs font-bold tracking-widest uppercase mb-4 shadow-lg">
-              PORTFOLIO
+              3D Designer
             </motion.div>
             
             <motion.h1 variants={itemVariants} className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-none">
@@ -100,23 +99,22 @@ function App() {
         <hr className="border-t border-foreground/5" />
       </div>
       <Experience work={data.experiences} projects={data.projects} />
-      <Extra training={data.training} />
       
       {/* Contact CTA */}
       <section className="py-32 bg-foreground text-background relative overflow-hidden">
         <div className="absolute top-0 right-0 w-full h-full bg-primary/5 pointer-events-none" />
         <div className="container mx-auto px-6 text-center space-y-12 relative z-10">
           <h2 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter uppercase leading-[0.8]">
-            Let's <br /> <span className="text-primary italic">Connect</span>
+            Let's <br /> <span className="text-primary italic">Work Together</span>
           </h2>
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
             <div className="space-y-2">
               <p className="opacity-40 text-sm font-black uppercase tracking-[0.4em]">Email</p>
-              <a href="mailto:jin0946@gmail.com" className="text-2xl md:text-3xl font-black tracking-tight hover:text-primary transition-colors">xodnwong74@kakao.com</a>
+              <a href="mailto:jin0946@gmail.com" className="text-2xl md:text-3xl font-black tracking-tight hover:text-primary transition-colors">jin0946@gmail.com</a>
             </div>
             <div className="space-y-2">
               <p className="opacity-40 text-sm font-black uppercase tracking-[0.4em]">Phone</p>
-              <a href="tel:01038406167" className="text-2xl md:text-3xl font-black tracking-tight hover:text-primary transition-colors">010-8207-0946</a>
+              <a href="tel:01082070946" className="text-2xl md:text-3xl font-black tracking-tight hover:text-primary transition-colors">010-8207-0946</a>
             </div>
           </div>
           <div className="pt-8">
@@ -125,7 +123,7 @@ function App() {
               className="group relative px-16 py-6 bg-primary text-white rounded-full font-black text-xl hover:scale-105 transition-all inline-block shadow-2xl hover:shadow-primary/40 overflow-hidden"
             >
               <span className="relative z-10">Say Hello</span>
-              <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity" />
+              <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity" />
             </a>
           </div>
         </div>

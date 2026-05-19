@@ -5,6 +5,7 @@ import ProjectModal from './ProjectModal';
 
 export interface ProjectData {
   id: number;
+  category?: string;
   name: string;
   logo?: string;
   period: string;
@@ -35,7 +36,7 @@ export default function Projects({ projects }: ProjectsProps) {
             <h2 className="text-5xl font-black tracking-tighter uppercase leading-none">
               Selected <br /> <span className="text-primary">Projects</span>
             </h2>
-            <p className="opacity-60 font-medium">실무에서 담당한 주요 백엔드 프로젝트</p>
+            <p className="opacity-60 font-medium">실무에서 담당한 주요 프로젝트</p>
           </div>
         </div>
         
