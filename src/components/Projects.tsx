@@ -6,7 +6,7 @@ import ProjectModal from './ProjectModal';
 export interface ProjectData {
   id: number;
   name: string;
-  logo: string;
+  logo?: string;
   period: string;
   description: string;
   tech?: string[];
@@ -75,7 +75,7 @@ export default function Projects({ projects }: ProjectsProps) {
               <div className="space-y-3 px-2">
                 <p className="text-xs font-black text-primary uppercase tracking-widest">{project.period}</p>
                 <h3 className="text-2xl font-bold tracking-tight group-hover:text-primary transition-colors flex items-center gap-2">
-                  <img src={project.logo} alt="logo" className="w-6 h-6 object-contain bg-white rounded-full" />
+                  {project.logo && <img src={project.logo} alt="logo" className="w-6 h-6 object-contain bg-white rounded-full" />}
                   {project.name}
                 </h3>
                 <p className="opacity-60 text-sm line-clamp-2 leading-relaxed">{project.description}</p>

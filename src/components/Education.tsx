@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolioData';
 
 export default function Education() {
-  const { education, certifications, military } = portfolioData;
+  const { education, certifications } = portfolioData;
 
   return (
     <section className="py-24 bg-foreground text-background transition-colors duration-500 overflow-hidden">
@@ -35,10 +35,10 @@ export default function Education() {
             </div>
           </div>
           
-          {/* Certifications & Military Timeline */}
+          {/* Certifications Timeline */}
           <div className="space-y-16">
             <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">
-              Cert & Military
+              Certifications
             </h2>
             
             <div className="space-y-12 border-l-2 border-background/10 pl-10 ml-2">
@@ -56,20 +56,6 @@ export default function Education() {
                   <h3 className="text-2xl font-black text-background tracking-tight leading-tight">{item.title}</h3>
                 </motion.div>
               ))}
-              
-              {/* Military */}
-              <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                viewport={{ once: true }}
-                className="relative space-y-3 group pt-4"
-              >
-                <div className="absolute -left-[49px] top-5 h-5 w-5 rounded-full bg-foreground border-4 border-background group-hover:bg-primary group-hover:scale-125 transition-all duration-300" />
-                <p className="text-xs font-black text-primary uppercase tracking-[0.2em]">{military.period}</p>
-                <h3 className="text-2xl font-black text-background tracking-tight leading-tight">{military.service.split('/')[0]} {military.service.split('/')[1]}</h3>
-                <p className="text-sm font-bold opacity-40 uppercase tracking-widest">{military.service.split('/')[2]}</p>
-              </motion.div>
             </div>
           </div>
           

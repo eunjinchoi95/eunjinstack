@@ -4,8 +4,8 @@ import { BookOpen, ExternalLink, Image as ImageIcon, X, Bot, FileText } from 'lu
 
 interface ExtraProps {
   training: any[];
-  blogPosts: any[];
-  aiProjects: any[];
+  blogPosts?: any[];
+  aiProjects?: any[];
 }
 
 // Shared Tech brand colors mapping
@@ -22,7 +22,7 @@ const getTechColor = (tech: string) => {
   return 'bg-foreground/5 text-foreground/60 border-foreground/10';
 };
 
-export default function Extra({ training, blogPosts, aiProjects }: ExtraProps) {
+export default function Extra({ training, blogPosts = [], aiProjects = [] }: ExtraProps) {
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
 
   const containerVariants: Variants = {
@@ -93,55 +93,58 @@ export default function Extra({ training, blogPosts, aiProjects }: ExtraProps) {
 
           {/* Tech Blog & AI Projects */}
           <div className="space-y-12">
-              <div className="space-y-12">
-                <div className="flex items-center gap-4">
-                  <h3 className="text-2xl font-black uppercase tracking-widest text-foreground/40 italic">04.</h3>
-                  <h3 className="text-2xl font-black uppercase tracking-widest flex items-center gap-3">
-                    <span className="p-1.5 bg-orange-500/10 text-orange-500 rounded-lg shadow-sm"><FileText size={20} /></span>
-                    Tech Blog Posts
-                  </h3>
-                </div>
-                <ul className="space-y-5 flex-grow">
-                  {blogPosts.map((post) => (
-                    <motion.li variants={itemVariants} key={post.id}>
-                      <a 
-                        href={post.link} 
-                        target="_blank" 
-                        rel="noreferrer"
-                        className="block bg-white p-6 rounded-3xl border border-foreground/5 hover:border-orange-500/50 shadow-[0_4px_15px_rgba(0,0,0,0.02)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-500 group overflow-hidden relative"
-                      >
-                        <div className="absolute top-0 left-0 w-1.5 h-full bg-orange-500/10 group-hover:bg-orange-500 transition-colors"></div>
-                        <div className="pl-4 flex justify-between items-start gap-4">
-                          <div className="flex-1">
-                            <div className="flex gap-2 mb-3">
-                               {post.tags.map((tag: string) => (
-                                 <span key={tag} className="text-[10px] font-black uppercase tracking-widest text-orange-500 bg-orange-500/5 px-2.5 py-1 rounded-md border border-orange-500/10">{tag}</span>
-                               ))}
-                            </div>
-                            <div className="font-black text-foreground group-hover:text-orange-500 transition-colors line-clamp-2 text-base leading-snug mb-3 tracking-tight">
-                              {post.title}
-                            </div>
-                            <div className="text-[10px] font-black uppercase tracking-widest text-foreground/30 group-hover:text-foreground/50 flex items-center gap-1 transition-colors">
-                              Read on Tistory <ExternalLink size={12} />
+              {blogPosts && blogPosts.length > 0 && (
+                <div className="space-y-12">
+                  <div className="flex items-center gap-4">
+                    <h3 className="text-2xl font-black uppercase tracking-widest text-foreground/40 italic">04.</h3>
+                    <h3 className="text-2xl font-black uppercase tracking-widest flex items-center gap-3">
+                      <span className="p-1.5 bg-orange-500/10 text-orange-500 rounded-lg shadow-sm"><FileText size={20} /></span>
+                      Tech Blog Posts
+                    </h3>
+                  </div>
+                  <ul className="space-y-5 flex-grow">
+                    {blogPosts.map((post) => (
+                      <motion.li variants={itemVariants} key={post.id}>
+                        <a 
+                          href={post.link} 
+                          target="_blank" 
+                          rel="noreferrer"
+                          className="block bg-white p-6 rounded-3xl border border-foreground/5 hover:border-orange-500/50 shadow-[0_4px_15px_rgba(0,0,0,0.02)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-500 group overflow-hidden relative"
+                        >
+                          <div className="absolute top-0 left-0 w-1.5 h-full bg-orange-500/10 group-hover:bg-orange-500 transition-colors"></div>
+                          <div className="pl-4 flex justify-between items-start gap-4">
+                            <div className="flex-1">
+                              <div className="flex gap-2 mb-3">
+                                 {post.tags.map((tag: string) => (
+                                   <span key={tag} className="text-[10px] font-black uppercase tracking-widest text-orange-500 bg-orange-500/5 px-2.5 py-1 rounded-md border border-orange-500/10">{tag}</span>
+                                 ))}
+                              </div>
+                              <div className="font-black text-foreground group-hover:text-orange-500 transition-colors line-clamp-2 text-base leading-snug mb-3 tracking-tight">
+                                {post.title}
+                              </div>
+                              <div className="text-[10px] font-black uppercase tracking-widest text-foreground/30 group-hover:text-foreground/50 flex items-center gap-1 transition-colors">
+                                Read on Tistory <ExternalLink size={12} />
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </a>
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="space-y-12 pt-12">
-                <div className="flex items-center gap-4">
-                  <h3 className="text-2xl font-black uppercase tracking-widest text-foreground/40 italic">05.</h3>
-                  <h3 className="text-2xl font-black uppercase tracking-widest flex items-center gap-3">
-                    <span className="p-1.5 bg-purple-500/10 text-purple-500 rounded-lg shadow-sm"><Bot size={20} /></span>
-                    AI Agent Projects
-                  </h3>
+                        </a>
+                      </motion.li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="space-y-5 flex-grow">
-                  {aiProjects?.map((post) => {
+              )}
+
+              {aiProjects && aiProjects.length > 0 && (
+                <div className={`space-y-12 ${blogPosts && blogPosts.length > 0 ? 'pt-12' : ''}`}>
+                  <div className="flex items-center gap-4">
+                    <h3 className="text-2xl font-black uppercase tracking-widest text-foreground/40 italic">05.</h3>
+                    <h3 className="text-2xl font-black uppercase tracking-widest flex items-center gap-3">
+                      <span className="p-1.5 bg-purple-500/10 text-purple-500 rounded-lg shadow-sm"><Bot size={20} /></span>
+                      AI Agent Projects
+                    </h3>
+                  </div>
+                  <ul className="space-y-5 flex-grow">
+                    {aiProjects.map((post) => {
                     const hasLink = post.link && post.link !== '#';
                     const hasImage = !!post.image;
 
@@ -196,6 +199,7 @@ export default function Extra({ training, blogPosts, aiProjects }: ExtraProps) {
                   })}
                 </ul>
               </div>
+            )}
           </div>
         </motion.div>
       </div>

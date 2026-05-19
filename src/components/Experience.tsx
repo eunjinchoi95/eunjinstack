@@ -7,21 +7,19 @@ import type { ProjectData } from './Projects';
 // Shared Tech brand colors mapping
 const getTechColor = (tech: string) => {
   const t = tech.toLowerCase();
-  if (t.includes('java') && !t.includes('script')) return 'bg-[#5382a1]/10 text-[#5382a1] border-[#5382a1]/20';
-  if (t.includes('spring') || t.includes('jpa')) return 'bg-[#6db33f]/10 text-[#6db33f] border-[#6db33f]/20';
-  if (t.includes('redis')) return 'bg-[#dc382d]/10 text-[#dc382d] border-[#dc382d]/20';
-  if (t.includes('oracle')) return 'bg-[#f80000]/10 text-[#f80000] border-[#f80000]/20';
-  if (t.includes('postgres')) return 'bg-[#336791]/10 text-[#336791] border-[#336791]/20';
-  if (t.includes('kafka')) return 'bg-gray-800/10 text-gray-800 border-gray-800/20';
-  if (t.includes('ext js') || t.includes('netjs')) return 'bg-[#86b81b]/10 text-[#86b81b] border-[#86b81b]/20';
-  if (t.includes('api')) return 'bg-blue-500/10 text-blue-600 border-blue-500/20';
+  if (t.includes('autocad')) return 'bg-blue-600/10 text-blue-600 border-blue-600/20';
+  if (t.includes('sketchup')) return 'bg-red-500/10 text-red-500 border-red-500/20';
+  if (t.includes('3dsmax')) return 'bg-emerald-600/10 text-emerald-600 border-emerald-600/20';
+  if (t.includes('photoshop')) return 'bg-blue-400/10 text-blue-500 border-blue-400/20';
+  if (t.includes('v-ray')) return 'bg-orange-500/10 text-orange-500 border-orange-500/20';
+  if (t.includes('illustrator')) return 'bg-orange-600/10 text-orange-600 border-orange-600/20';
   return 'bg-foreground/5 text-foreground/60 border-foreground/10';
 };
 
 interface WorkItem {
   id: number;
   company: string;
-  logo: string;
+  logo?: string;
   role: string;
   period: string;
   description: string;

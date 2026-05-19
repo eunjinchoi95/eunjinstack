@@ -2,24 +2,26 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Mail, BrainCircuit, Phone } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
-import profileImage from '../assets/images/profile.jpeg';
+import profileImage from '../assets/images/profile_new.jpg';
 
 export default function About() {
   const { about } = portfolioData;
 
   const renderHighlightedText = (text: string) => {
     const highlights = [
-      "6년 차 백엔드 개발자",
-      "Java",
-      "Spring Framework",
-      "Spring Boot",
-      "Spring Batch",
-      "Oracle",
-      "Redis를 직접 도입",
-      "데이터 적재 아키텍처",
-      "캐싱 및 검색 성능을 크게 개선",
-      "AI 에이전트",
-      "비즈니스 가치 및 개발 생산성 증가"
+      "3D 디자이너",
+      "실내건축디자인",
+      "인테리어 설계",
+      "건축 CG",
+      "LED 설계",
+      "AutoCAD",
+      "SketchUp",
+      "3dsMax",
+      "Photoshop",
+      "V-Ray",
+      "도면 작업",
+      "3D 시안",
+      "공간을 실제 구현 가능한 형태로 시각화"
     ];
     
     let parts: (string | React.ReactNode)[] = [text];
@@ -74,7 +76,6 @@ export default function About() {
             </div>
           </motion.div>
           
-          {/* Text Content - Clear spacing on mobile */}
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -84,7 +85,6 @@ export default function About() {
           >
             <div className="space-y-8">
               <div className="space-y-2 text-center lg:text-left">
-                <p className="text-primary font-black uppercase tracking-[0.2em] text-sm">Professional Profile</p>
                 <h2 className="text-5xl md:text-6xl font-black tracking-tighter uppercase">
                   About <span className="text-primary">Me</span>
                 </h2>
