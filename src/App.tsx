@@ -7,6 +7,8 @@ import About from './components/About';
 import Education from './components/Education';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
+import ScrollFloat from './components/ScrollFloat';
+import TextType from './components/TextType';
 
 function App() {
   const data = portfolioData;
@@ -52,20 +54,19 @@ function App() {
               PORTFOLIO
             </motion.div>
             
-            <motion.h1 variants={itemVariants} className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-none">
+            <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter leading-none">
               CHOI <span className="text-primary italic">EUN JIN</span>
             </motion.h1>
 
-            <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-8 tracking-tight leading-tight whitespace-pre-line max-w-4xl">
-              {data.hero.greeting.split('\n').map((line, lineIdx) => (
-                <span key={lineIdx} className="block">
-                  {line.split(' ').map((word, i) => (
-                    word.includes('3D') || word.includes('디자이너') 
-                      ? <span key={i} className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 inline-block mr-2">{word}</span> 
-                      : <span key={i} className="inline-block mr-2">{word}</span>
-                  ))}
-                </span>
-              ))}
+            <motion.h2 variants={itemVariants} className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-foreground mt-8 tracking-tight leading-relaxed whitespace-pre-line max-w-4xl h-[4em] flex items-center justify-center">
+              <TextType 
+                text={data.hero.greeting}
+                typingSpeed={70}
+                pauseDuration={3000}
+                loop={true}
+                cursorCharacter="_"
+                cursorClassName="text-primary"
+              />
             </motion.h2>
             
             <motion.p variants={itemVariants} className="max-w-[700px] text-lg md:text-xl opacity-50 font-medium leading-relaxed whitespace-pre-line mt-6">
@@ -86,33 +87,31 @@ function App() {
       </div>
       <Experience work={data.experiences} projects={data.projects} />
       
-      {/* Contact CTA */}
-      <section className="py-32 bg-foreground text-background relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-full h-full bg-primary/5 pointer-events-none" />
-        <div className="container mx-auto px-6 text-center space-y-12 relative z-10">
-          <h2 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter uppercase leading-[0.8]">
-            Let's <br /> <span className="text-primary italic">Work Together</span>
-          </h2>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
-            <div className="space-y-2">
-              <p className="opacity-40 text-sm font-black uppercase tracking-[0.4em]">Email</p>
-              <a href="mailto:jin0946@gmail.com" className="text-2xl md:text-3xl font-black tracking-tight hover:text-primary transition-colors">jin0946@gmail.com</a>
-            </div>
-            <div className="space-y-2">
-              <p className="opacity-40 text-sm font-black uppercase tracking-[0.4em]">Phone</p>
-              <a href="tel:01082070946" className="text-2xl md:text-3xl font-black tracking-tight hover:text-primary transition-colors">010-8207-0946</a>
-            </div>
-          </div>
-          <div className="pt-8">
-            <a 
-              href="mailto:jin0946@gmail.com"
-              className="group relative px-16 py-6 bg-primary text-white rounded-full font-black text-xl hover:scale-105 transition-all inline-block shadow-2xl hover:shadow-primary/40 overflow-hidden"
-            >
-              <span className="relative z-10">Say Hello</span>
-              <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity" />
-            </a>
-          </div>
+      {/* Contact CTA - White Background (Forced even in dark mode as requested) */}
+      <section className="py-24 md:py-32 bg-white text-foreground relative overflow-hidden">
+        <div className="container mx-auto px-6 text-center space-y-4 relative z-10">
+          <ScrollFloat 
+            containerClassName="flex justify-center my-0"
+            textClassName="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-[#1512ca]"
+            scrollStart="top 90%"
+            scrollEnd="bottom 60%"
+          >
+            Let's Work Together
+          </ScrollFloat>
+          <ScrollFloat 
+            containerClassName="flex justify-center my-0"
+            textClassName="text-3xl md:text-4xl font-bold italic mt-4 text-[#1512ca]"
+            scrollStart="top 90%"
+            scrollEnd="bottom 60%"
+          >
+            Thank you for watching.
+          </ScrollFloat>
         </div>
+      </section>
+
+      {/* Blank Space - Black Background (Forced even in dark mode as requested) */}
+      <section className="h-[30vh] bg-black relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-full h-full bg-primary/5 pointer-events-none" />
       </section>
     </div>
   );

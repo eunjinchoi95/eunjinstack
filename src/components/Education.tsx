@@ -10,14 +10,14 @@ export default function Education() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           
           {/* Education Timeline */}
-          <div className="space-y-16">
+          <div className="space-y-12">
             <div className="flex items-center gap-4">
-              <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">
+              <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
                 Education
               </h2>
             </div>
             
-            <div className="space-y-12 border-l-2 border-background/10 pl-10 ml-2">
+            <div className="space-y-10 border-l-2 border-background/10 pl-10 ml-2">
               {education.map((item, index) => (
                 <motion.div 
                   key={item.id}
@@ -25,23 +25,23 @@ export default function Education() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="relative space-y-3 group"
+                  className="relative space-y-2 group"
                 >
                   <div className="absolute -left-[49px] top-1.5 h-5 w-5 rounded-full bg-foreground border-4 border-background group-hover:bg-primary group-hover:scale-125 transition-all duration-300" />
-                  <p className="text-xs font-black text-primary uppercase tracking-[0.2em]">{item.period}</p>
-                  <h3 className="text-2xl font-black text-background tracking-tight leading-tight">{item.title}</h3>
+                  <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em] opacity-80">{item.period}</p>
+                  <h3 className="text-xl md:text-2xl font-semibold text-background tracking-tight leading-tight">{item.title}</h3>
                 </motion.div>
               ))}
             </div>
           </div>
           
           {/* Work Experience Summary Timeline */}
-          <div className="space-y-16">
-            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">
+          <div className="space-y-12">
+            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
               Work Experience
             </h2>
             
-            <div className="space-y-12 border-l-2 border-background/10 pl-10 ml-2">
+            <div className="space-y-10 border-l-2 border-background/10 pl-10 ml-2">
               {portfolioData.experiences.map((item, index) => (
                 <motion.div 
                   key={item.id}
@@ -49,12 +49,12 @@ export default function Education() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="relative space-y-3 group"
+                  className="relative space-y-2 group"
                 >
                   <div className="absolute -left-[49px] top-1.5 h-5 w-5 rounded-full bg-foreground border-4 border-background group-hover:bg-primary group-hover:scale-125 transition-all duration-300" />
-                  <p className="text-xs font-black text-primary uppercase tracking-[0.2em]">{item.period}</p>
-                  <h3 className="text-2xl font-black text-background tracking-tight leading-tight">{item.company}</h3>
-                  <p className="text-sm font-bold opacity-40 uppercase tracking-widest">{item.role}</p>
+                  <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em] opacity-80">{item.period}</p>
+                  <h3 className="text-xl md:text-2xl font-semibold text-background tracking-tight leading-tight">{item.company}</h3>
+                  <p className="text-xs font-medium uppercase tracking-widest text-[#6f6f6f]">{item.role}</p>
                 </motion.div>
               ))}
             </div>
