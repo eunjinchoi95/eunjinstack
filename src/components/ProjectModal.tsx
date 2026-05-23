@@ -109,7 +109,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.3 }}
-                      className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter uppercase leading-none flex items-center gap-4"
+                      className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter uppercase leading-none flex items-center gap-4"
                     >
                       {project.logo && <img src={project.logo} alt="logo" className="w-12 h-12 rounded-full bg-white border border-foreground/10 shadow-sm object-contain" />}
                       {project.name}
@@ -124,7 +124,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                         <div className="h-8 w-1 bg-primary rounded-full" />
                         <h3 className="text-2xl font-black uppercase tracking-tight italic">Project Overview</h3>
                       </div>
-                      <p className="text-lg leading-relaxed font-medium opacity-80 whitespace-pre-line">
+                      <p className="text-base leading-relaxed font-medium opacity-80 whitespace-pre-line">
                         {renderDescriptionWithLinks(project.detail)}
                       </p>
                     </div>
@@ -133,7 +133,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                       <div className="space-y-6">
                         <div className="flex items-center gap-2 font-black text-sm uppercase tracking-widest text-primary">
                           <Tag className="h-4 w-4" />
-                          Key Technologies
+                          Program
                         </div>
                         <div className="flex flex-wrap gap-2">
                           {project.tech?.map((tag, i) => (
@@ -167,17 +167,73 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                       <div className="flex items-center justify-between mb-10">
                         <h3 className="text-2xl font-black uppercase tracking-tight italic">Process & Details</h3>
                       </div>
-                      <div className="mx-auto flex w-full max-w-3xl flex-col items-center gap-8">
-                        {detailImages.map((image, index) => (
-                          <div key={index} className="relative w-full overflow-hidden rounded-3xl bg-foreground/5">
-                            <img
-                              src={image}
-                              alt={`${project.name} detail ${index + 1}`}
-                              className="w-full h-auto object-contain"
-                            />
+                      
+                      {/* Grid Layout for Image Sets (e.g., 4 images per set for Kukbo Design) */}
+                      {project.id === 2 ? (
+                        <div className="space-y-24">
+                          {/* 1. Show Thumbnail First if it's the building exterior */}
+                          <div className="space-y-4 mb-16">
+                            <p className="text-[10px] font-black uppercase opacity-30 tracking-widest text-center">Project Exterior</p>
+                            <div className="relative overflow-hidden rounded-[2.5rem] bg-foreground/5 border border-foreground/5 shadow-lg">
+                              <img src={detailImages[0]} alt="Thumbnail" className="w-full h-auto" />
+                            </div>
                           </div>
-                        ))}
-                      </div>
+
+                          {/* 2. Process Sets (Skip the first thumbnail image) */}
+                          {Array.from({ length: (detailImages.length - 1) / 4 }).map((_, setIndex) => {
+                            const setImages = detailImages.slice(setIndex * 4 + 1, setIndex * 4 + 5);
+                            const sectionNames = ["Loyalty Gaming", "Main Column", "Mass Gaming Wall", "Secondary Entrance Door", "Secondary Entrance Wall"];
+                            
+                            return (
+                              <div key={setIndex} className="space-y-8">
+                                <div className="flex items-center gap-4">
+                                  <span className="text-primary font-black text-xs uppercase tracking-[0.3em]">Area {setIndex + 1}</span>
+                                  <h4 className="text-xl font-bold uppercase tracking-tight opacity-80">{sectionNames[setIndex]}</h4>
+                                </div>
+                                
+                                {/* 1. Plan & Perspective (Small, side-by-side, Same Height) */}
+                                <div className="grid grid-cols-2 gap-4">
+                                  <div className="space-y-2">
+                                    <p className="text-[10px] font-black uppercase opacity-30 tracking-widest text-center">Floor Plan</p>
+                                    <div className="relative overflow-hidden rounded-2xl bg-foreground/5 border border-foreground/5 aspect-[4/3]">
+                                      <img src={setImages[0]} alt="Plan" className="w-full h-full object-cover object-center" />
+                                    </div>
+                                  </div>
+                                  <div className="space-y-2">
+                                    <p className="text-[10px] font-black uppercase opacity-30 tracking-widest text-center">Perspective View</p>
+                                    <div className="relative overflow-hidden rounded-2xl bg-foreground/5 border border-foreground/5 aspect-[4/3]">
+                                      <img src={setImages[1]} alt="Perspective" className="w-full h-full object-cover object-center" />
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                                {/* 2. Detail Images (Large, stacked) */}
+                                <div className="space-y-6 pt-4">
+                                  <p className="text-[10px] font-black uppercase opacity-30 tracking-widest text-center">Detail Visualization</p>
+                                  <div className="relative overflow-hidden rounded-[2rem] bg-foreground/5 border border-foreground/5">
+                                    <img src={setImages[2]} alt="Detail 1" className="w-full h-auto" />
+                                  </div>
+                                  <div className="relative overflow-hidden rounded-[2rem] bg-foreground/5 border border-foreground/5">
+                                    <img src={setImages[3]} alt="Detail 2" className="w-full h-auto" />
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      ) : (
+                        <div className="mx-auto flex w-full max-w-3xl flex-col items-center gap-8">
+                          {detailImages.map((image, index) => (
+                            <div key={index} className="relative w-full overflow-hidden rounded-3xl bg-foreground/5">
+                              <img
+                                src={image}
+                                alt={`${project.name} detail ${index + 1}`}
+                                className="w-full h-auto object-contain"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>

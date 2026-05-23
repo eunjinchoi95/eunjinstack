@@ -56,77 +56,68 @@ export default function Experience({ projects }: ExperienceProps) {
           <div className="h-1.5 w-24 bg-primary rounded-full" />
         </motion.div>
         
-        {categories.map((category) => {
-          const categoryProjects = projects.filter(p => p.category === category);
-          if (categoryProjects.length === 0) return null;
-
-          return (
-            <div key={category} className="mb-24 last:mb-0">
-              <div className="flex items-center gap-4 mb-12">
-                <h3 className="text-2xl font-black uppercase tracking-widest text-foreground/40 italic">{category.split('.')[0]}.</h3>
-                <h3 className="text-2xl font-black uppercase tracking-widest">{category.split('.')[1].trim()}</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.map((proj) => (
+            <motion.div 
+              layout
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              key={proj.id} 
+              onClick={() => setSelectedProject(proj)}
+              className="group bg-white rounded-[2rem] border border-foreground/5 shadow-[0_4px_15px_rgba(0,0,0,0.02)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] transition-all duration-500 cursor-pointer relative overflow-hidden flex flex-col h-full"
+            >
+              {/* Project Image Preview */}
+              <div className="relative aspect-[16/10] overflow-hidden bg-foreground/5">
+                {proj.images && proj.images.length > 0 ? (
+                  <img 
+                    src={proj.images[0]} 
+                    alt={proj.name} 
+                    className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center opacity-20 font-black italic text-2xl">
+                    NO IMAGE
+                  </div>
+                )}
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="bg-white/90 backdrop-blur-sm text-foreground p-3 rounded-full shadow-xl">
+                    <ExternalLink size={20} />
+                  </div>
+                </div>
               </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {categoryProjects.map((proj) => (
-                  <motion.div 
-                    layout
-                    variants={cardVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-50px" }}
-                    key={proj.id} 
-                    onClick={() => setSelectedProject(proj)}
-                    className="group bg-white rounded-[2rem] border border-foreground/5 shadow-[0_4px_15px_rgba(0,0,0,0.02)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] transition-all duration-500 cursor-pointer relative overflow-hidden flex flex-col h-full"
-                  >
-                    {/* Project Image Preview */}
-                    <div className="relative aspect-[16/10] overflow-hidden bg-foreground/5">
-                      {proj.images && proj.images.length > 0 ? (
-                        <img 
-                          src={proj.images[0]} 
-                          alt={proj.name} 
-                          className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
-                        />
-                      ) : (
-                        <div className="w-full h-full flex items-center justify-center opacity-20 font-black italic text-2xl">
-                          NO IMAGE
-                        </div>
-                      )}
-                      <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div className="bg-white/90 backdrop-blur-sm text-foreground p-3 rounded-full shadow-xl">
-                          <ExternalLink size={20} />
-                        </div>
-                      </div>
-                    </div>
 
-                    <div className="p-8 flex flex-col flex-grow">
-                      <div className="mb-6">
-                        <h4 className="text-xl font-black text-foreground group-hover:text-primary transition-colors tracking-tight leading-tight mb-2">
-                          {proj.name}
-                        </h4>
-                        <p className="text-[11px] font-black text-primary/60 uppercase tracking-widest">
-                          {proj.period}
-                        </p>
-                      </div>
-                      
-                      <p className="text-foreground/60 text-[15px] leading-relaxed mb-8 flex-grow">
-                        {proj.description}
-                      </p>
-                      
-                      <div className="flex flex-wrap gap-2 pt-4 border-t border-foreground/5">
-                        {proj.tech?.map(tech => (
-                          <span key={tech} className={`px-3 py-1.5 rounded-lg text-[10px] uppercase font-black tracking-widest border transition-all duration-300 ${getTechColor(tech)}`}>
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
+              <div className="p-8 flex flex-col flex-grow">
+                <div className="mb-6">
+                  {proj.category && (
+                    <p className="text-[10px] font-black text-primary/40 uppercase tracking-[0.2em] mb-2">
+                      {proj.category}
+                    </p>
+                  )}
+                  <h4 className="text-xl font-black text-foreground group-hover:text-primary transition-colors tracking-tight leading-tight mb-2">
+                    {proj.name}
+                  </h4>
+                  <p className="text-[11px] font-black text-foreground/40 uppercase tracking-widest">
+                    {proj.period}
+                  </p>
+                </div>
+                
+                <p className="text-foreground/60 text-[15px] leading-relaxed mb-8 flex-grow">
+                  {proj.description}
+                </p>
+                
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-foreground/5">
+                  {proj.tech?.map(tech => (
+                    <span key={tech} className={`px-3 py-1.5 rounded-lg text-[10px] uppercase font-black tracking-widest border transition-all duration-300 ${getTechColor(tech)}`}>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-          );
-        })}
+            </motion.div>
+          ))}
+        </div>
       </div>
 
       <ProjectModal 

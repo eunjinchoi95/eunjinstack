@@ -2,11 +2,31 @@ import schoolImg1 from '../assets/projects/01_school/최은진_포트폴리오_4
 import schoolImg2 from '../assets/projects/01_school/최은진_포트폴리오_5.jpg';
 import schoolImg3 from '../assets/projects/01_school/최은진_포트폴리오_6.jpg';
 
-import kukboImg1 from '../assets/projects/02_kukbo/최은진_포트폴리오_13.jpg';
-import kukboImg2 from '../assets/projects/02_kukbo/최은진_포트폴리오_14.jpg';
-import kukboImg3 from '../assets/projects/02_kukbo/최은진_포트폴리오_15.jpg';
-import kukboImg4 from '../assets/projects/02_kukbo/최은진_포트폴리오_16.jpg';
-import kukboImg5 from '../assets/projects/02_kukbo/최은진_포트폴리오_17.jpg';
+import kukboLoyaltyPersp from '../assets/projects/02_kukbo/Loyalty Gaming Perspective View.jpg';
+import kukboThumbnail from '../assets/projects/02_kukbo/kukbo_thumbnail.jpg';
+import kukboLoyaltyPlan from '../assets/projects/02_kukbo/Loyalty Gaming Floor Plan.jpg';
+import kukboLoyalty1 from '../assets/projects/02_kukbo/Loyalty_Gaming_1.jpg';
+import kukboLoyalty2 from '../assets/projects/02_kukbo/Loyalty_Gaming_2.jpg';
+
+import kukboMainColPersp from '../assets/projects/02_kukbo/Main Column Perspective View.jpg';
+import kukboMainColPlan from '../assets/projects/02_kukbo/Main Column Floor Plan.jpg';
+import kukboMainCol1 from '../assets/projects/02_kukbo/Main_Column_1.jpg';
+import kukboMainCol2 from '../assets/projects/02_kukbo/Main_Column_2.jpg';
+
+import kukboMassPersp from '../assets/projects/02_kukbo/Mass Gaming Wall Perspective View.jpg';
+import kukboMassPlan from '../assets/projects/02_kukbo/Mass Gaming Wall Floor Plan.jpg';
+import kukboMass1 from '../assets/projects/02_kukbo/Mass_Gaming_Wall_1.jpg';
+import kukboMass2 from '../assets/projects/02_kukbo/Mass_Gaming_Wall_2.jpg';
+
+import kukboEntranceDoorPersp from '../assets/projects/02_kukbo/Secondary Entrance Door Perspective View.jpg';
+import kukboEntranceDoorPlan from '../assets/projects/02_kukbo/Secondary Entrance Door Floor Plan.jpg';
+import kukboEntranceDoor1 from '../assets/projects/02_kukbo/Secondary_Entrance_Door_1.jpg';
+import kukboEntranceDoor2 from '../assets/projects/02_kukbo/Secondary_Entrance_Door_2.jpg';
+
+import kukboEntranceWallPersp from '../assets/projects/02_kukbo/Secondary Entrance Wall Perspective View.jpg';
+import kukboEntranceWallPlan from '../assets/projects/02_kukbo/Secondary Entrance Wall Floor Plan.jpg';
+import kukboEntranceWall1 from '../assets/projects/02_kukbo/Secondary_Entrance_Wall_1.jpg';
+import kukboEntranceWall2 from '../assets/projects/02_kukbo/Secondary_Entrance_Wall_2.jpg';
 
 import cospecImg1 from '../assets/projects/03_cospec/최은진_포트폴리오_19.jpg';
 import cospecImg2 from '../assets/projects/03_cospec/최은진_포트폴리오_20.jpg';
@@ -34,6 +54,8 @@ export const portfolioData = {
     summary: [
       "실내건축디자인 전공 이후 인테리어 설계, 건축 CG, LED 설계 및 디자인 업무까지 약 5년 이상의 실무 경험을 쌓아왔습니다.",
       "AutoCAD, SketchUp, 3dsMax, Photoshop, V-Ray 등을 활용한 도면 작업 및 3D 시안 제작이 가능하며, 공간을 실제 구현 가능한 형태로 시각화하는 업무에 강점을 가지고 있습니다.",
+      "현재 재직 중인 팀 내에서는 노션을 활용해 체계적인 협업 프로세스와 시스템 구축을 주도하며 업무 효율성을 높이는 데 기여하고 있습니다.",
+      "특히 수많은 프로젝트 데이터를 효율적으로 관리하기 위한 도면 정리 시스템을 구축하여, 팀원들이 필요한 정보를 신속하게 정확히 찾을 수 있는 환경을 만들었습니다.",
       "다양한 프로젝트 협업 경험을 바탕으로 일정과 퀄리티를 책임감 있게 관리하며, 실무에 빠르게 적응하고 안정적으로 업무를 수행하는 디자이너입니다.",
       "작업의 완성도와 디테일을 중요하게 생각하며, 새로운 업무나 환경에도 빠르게 적응하여 안정적으로 프로젝트를 진행하는 강점을 가지고 있습니다."
     ],
@@ -94,14 +116,26 @@ export const portfolioData = {
     },
     {
       id: 2,
-      category: "02. 국보디자인 프로젝트",
-      name: "제주 드림타워 복합리조트 샵드로잉",
+      category: "02. Kukbo Design Project",
+      name: "Jeju Dream Tower Casino",
       logo: undefined,
       period: "2019.04 - 2020.03",
-      description: "대규모 복합리조트 인테리어 샵드로잉 및 3D 모델링 프로젝트",
-      tech: ["AutoCAD", "3dsMax", "Photoshop"],
-      detail: "제주 드림타워 복합리조트 건설 프로젝트에 참여하여 인테리어 설계의 디테일을 완성하는 샵드로잉 업무를 수행했습니다.\n\n• 주요 공간: 1층 로비, 2층 카지노, 4층 마이스(MICE) 시설의 정밀 도면 작업\n• 3D 시각화: 설계 도면을 기반으로 한 3D 모델링 작업을 통해 실제 시공 전 공간감을 검증하고 조율하는 역할을 담당했습니다.\n• 협업: 시공 현장 및 설계팀과의 긴밀한 소통을 통해 설계 의도가 현장에 정확히 반영되도록 도면을 수정 및 보완했습니다.",
-      images: [kukboImg1, kukboImg2, kukboImg3, kukboImg4, kukboImg5]
+      description: "제주 드림타워 복합리조트 인테리어 샵드로잉 및 3D 시각화 프로젝트",
+      tech: ["SketchUp", "AutoCAD", "Adobe Photoshop"],
+      detail: "제주 드림타워 복합리조트 건설 프로젝트의 샵드로잉 및 3D 시뮬레이션 업무를 수행했습니다.\n\n• 핵심 역할:\n  - 초기 디자인 안을 실제 시공 가능한 정밀 도면으로 데이터화하여 현장 적용성 극대화\n  - 총괄 디자이너와의 긴밀한 실시간 협업을 통해 현장의 요구사항을 즉각적으로 설계에 반영 및 최적화\n  - 3D 시뮬레이션을 통해 마감재, 구조적 디테일 등을 사전에 시각화하여 프로젝트의 완성도 향상",
+      images: [
+        kukboThumbnail,
+        // Loyalty Gaming 섹션 (4)
+        kukboLoyaltyPlan, kukboLoyaltyPersp, kukboLoyalty1, kukboLoyalty2,
+        // Main Column 섹션 (4)
+        kukboMainColPlan, kukboMainColPersp, kukboMainCol1, kukboMainCol2,
+        // Mass Gaming Wall 섹션 (4)
+        kukboMassPlan, kukboMassPersp, kukboMass1, kukboMass2,
+        // Secondary Entrance Door 섹션 (4)
+        kukboEntranceDoorPlan, kukboEntranceDoorPersp, kukboEntranceDoor1, kukboEntranceDoor2,
+        // Secondary Entrance Wall 섹션 (4)
+        kukboEntranceWallPlan, kukboEntranceWallPersp, kukboEntranceWall1, kukboEntranceWall2
+      ]
     },
     {
       id: 3,

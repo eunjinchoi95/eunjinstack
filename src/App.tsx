@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { portfolioData } from './data/portfolioData';
 
@@ -12,6 +13,16 @@ import TextType from './components/TextType';
 
 function App() {
   const data = portfolioData;
+
+  useEffect(() => {
+    const handleContextMenu = (e: MouseEvent) => {
+      e.preventDefault();
+    };
+    document.addEventListener('contextmenu', handleContextMenu);
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenu);
+    };
+  }, []);
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
