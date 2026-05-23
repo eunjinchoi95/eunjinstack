@@ -28,12 +28,25 @@ import kukboEntranceWallPlan from '../assets/projects/02_kukbo/Secondary Entranc
 import kukboEntranceWall1 from '../assets/projects/02_kukbo/Secondary_Entrance_Wall_1.jpg';
 import kukboEntranceWall2 from '../assets/projects/02_kukbo/Secondary_Entrance_Wall_2.jpg';
 
-import cospecImg1 from '../assets/projects/03_cospec/최은진_포트폴리오_19.jpg';
-import cospecImg2 from '../assets/projects/03_cospec/최은진_포트폴리오_20.jpg';
-import cospecImg3 from '../assets/projects/03_cospec/최은진_포트폴리오_21.jpg';
-import cospecImg4 from '../assets/projects/03_cospec/최은진_포트폴리오_22.jpg';
-import cospecImg5 from '../assets/projects/03_cospec/최은진_포트폴리오_23.jpg';
-import cospecImg6 from '../assets/projects/03_cospec/최은진_포트폴리오_24.jpg';
+import cospecPlan1 from '../assets/projects/03_cospec/plans/plan_1.jpg';
+import cospecPlan2 from '../assets/projects/03_cospec/plans/plan_2.jpg';
+import cospecPlan3 from '../assets/projects/03_cospec/plans/plan_3.jpg';
+import cospecPlan4 from '../assets/projects/03_cospec/plans/plan_4.jpg';
+import cospecPlan5 from '../assets/projects/03_cospec/plans/plan_5.jpg';
+import cospecPlan6 from '../assets/projects/03_cospec/plans/plan_6.jpg';
+import cospecPlan10 from '../assets/projects/03_cospec/plans/plan_10.jpg';
+import cospecPlan13 from '../assets/projects/03_cospec/plans/plan_13.jpg';
+import cospecPlan14 from '../assets/projects/03_cospec/plans/plan_14.jpg';
+import cospecPlan15 from '../assets/projects/03_cospec/plans/plan_15.jpg';
+
+import cospecPersp1 from '../assets/projects/03_cospec/perspectives/persp_1.jpg';
+import cospecPersp2 from '../assets/projects/03_cospec/perspectives/persp_2.jpg';
+import cospecPersp3 from '../assets/projects/03_cospec/perspectives/persp_3.jpg';
+import cospecPersp4 from '../assets/projects/03_cospec/perspectives/persp_4.jpg';
+import cospecPersp5 from '../assets/projects/03_cospec/perspectives/persp_5.jpg';
+import cospecPersp7 from '../assets/projects/03_cospec/perspectives/persp_7.jpg';
+import cospecPersp8 from '../assets/projects/03_cospec/perspectives/persp_8.jpg';
+import cospecPersp9 from '../assets/projects/03_cospec/perspectives/persp_9.jpg';
 
 import hanmacImg1 from '../assets/projects/04_hanmac/260424_사운즈한남_(1)_LED전광판시안_1.jpg';
 import hanmacImg2 from '../assets/projects/04_hanmac/260424_사운즈한남_(2)_LED전광판시안_1.jpg';
@@ -52,7 +65,7 @@ export const portfolioData = {
     contact: "jin0946@gmail.com | 010-8207-0946",
     mbti: "ENTJ",
     summary: [
-      "실내건축디자인 전공 이후 인테리어 설계, 건축 CG, LED 설계 및 디자인 업무까지 약 5년 이상의 실무 경험을 쌓아왔습니다.",
+      "실내건축디자인 전공 이후 인테리어 설계, 건축 CG, LED 설계 및 디자인 업무까지 다수의 프로젝트를 수행한 6년차 디자이너입니다.",
       "AutoCAD, SketchUp, 3dsMax, Photoshop, V-Ray 등을 활용한 도면 작업 및 3D 시안 제작이 가능하며, 공간을 실제 구현 가능한 형태로 시각화하는 업무에 강점을 가지고 있습니다.",
       "현재 재직 중인 팀 내에서는 노션을 활용해 체계적인 협업 프로세스와 시스템 구축을 주도하며 업무 효율성을 높이는 데 기여하고 있습니다.",
       "특히 수많은 프로젝트 데이터를 효율적으로 관리하기 위한 도면 정리 시스템을 구축하여, 팀원들이 필요한 정보를 신속하게 정확히 찾을 수 있는 환경을 만들었습니다.",
@@ -139,18 +152,35 @@ export const portfolioData = {
     },
     {
       id: 3,
-      category: "03. 코스펙에이비 프로젝트",
-      name: "건축 및 인테리어 투시도/시각화",
+      category: "03. Cospec AB Project",
+      name: "건축 및 인테리어 평면 및 배치도",
       logo: undefined,
       period: "2021.01 - 2024.01",
-      description: "다양한 건축 및 인테리어 프로젝트의 고퀄리티 CG 작업",
-      tech: ["3dsMax", "V-Ray", "Photoshop"],
-      detail: "코스펙에이비 재직 중 수행한 주요 CG 및 시각화 프로젝트입니다. 설계 도면을 바탕으로 재질감과 조명을 정밀하게 구현하여 실감 나는 투시도를 제작했습니다.",
-      images: [cospecImg1, cospecImg2, cospecImg3, cospecImg4, cospecImg5, cospecImg6]
+      description: "건축 및 인테리어 평면 및 배치도 시각화 작업",
+      tech: ["3dsMax", "SketchUp", "AutoCAD", "Photoshop", "V-Ray"],
+      detail: "코스펙에이비 재직 중 수행한 주요 건축 및 인테리어 평면 및 배치도 작업입니다. 설계 도면을 기반으로 공간의 구조를 명확하게 시각화하여 프로젝트의 이해도를 높였습니다.",
+      images: [
+        cospecPlan5, cospecPlan6, cospecPlan10, cospecPlan13, cospecPlan3,
+        cospecPlan4, cospecPlan14, cospecPlan15, cospecPlan1, cospecPlan2
+      ]
     },
     {
       id: 4,
-      category: "04. 한맥아이티 프로젝트",
+      category: "04. Cospec AB Project",
+      name: "건축 및 인테리어 투시도",
+      logo: undefined,
+      period: "2021.01 - 2024.01",
+      description: "건축 및 인테리어 고퀄리티 투시도 및 시각화",
+      tech: ["3dsMax", "SketchUp", "AutoCAD", "Photoshop", "V-Ray"],
+      detail: "코스펙에이비 재직 중 수행한 주요 고퀄리티 투시도 및 시각화 프로젝트입니다. 재질감과 조명을 정밀하게 구현하여 실감 나는 공간을 시각적으로 전달했습니다.",
+      images: [
+        cospecPersp1, cospecPersp2, cospecPersp3, cospecPersp4, cospecPersp5,
+        cospecPersp7, cospecPersp8, cospecPersp9
+      ]
+    },
+    {
+      id: 5,
+      category: "05. 한맥아이티 프로젝트",
       name: "LED 전광판 공간 디자인 및 시안 제작",
       logo: undefined,
       period: "2025.02 - 현재",
@@ -160,6 +190,7 @@ export const portfolioData = {
       images: [hanmacImg1, hanmacImg2, hanmacImg3, hanmacImg4]
     }
   ],
+
   education: [
     {
       id: 1,

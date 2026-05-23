@@ -221,6 +221,35 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                             );
                           })}
                         </div>
+                      ) : project.id === 4 ? (
+                        <div className="mx-auto flex w-full max-w-3xl flex-col items-center gap-8">
+                          {detailImages.map((image, index) => {
+                            // persp_3 (index 2), persp_4 (index 3) to be 2-column
+                            if (index === 2) {
+                              return (
+                                <div key={index} className="grid grid-cols-2 gap-4 w-full">
+                                  <div className="relative overflow-hidden rounded-3xl bg-foreground/5">
+                                    <img src={detailImages[2]} alt="persp_3" className="w-full h-auto" />
+                                  </div>
+                                  <div className="relative overflow-hidden rounded-3xl bg-foreground/5">
+                                    <img src={detailImages[3]} alt="persp_4" className="w-full h-auto" />
+                                  </div>
+                                </div>
+                              );
+                            }
+                            if (index === 3) return null;
+                            
+                            return (
+                              <div key={index} className="relative w-full overflow-hidden rounded-3xl bg-foreground/5">
+                                <img
+                                  src={image}
+                                  alt={`${project.name} detail ${index + 1}`}
+                                  className="w-full h-auto object-contain"
+                                />
+                              </div>
+                            );
+                          })}
+                        </div>
                       ) : (
                         <div className="mx-auto flex w-full max-w-3xl flex-col items-center gap-8">
                           {detailImages.map((image, index) => (
