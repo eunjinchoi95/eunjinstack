@@ -38,9 +38,6 @@ export default function Experience({ projects }: ExperienceProps) {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
   };
 
-  // Group projects by category
-  const categories = ["01. 학교 프로젝트", "02. 국보디자인 프로젝트", "03. 코스펙에이비 프로젝트", "04. 한맥아이티 프로젝트"];
-  
   return (
     <section id="experience" className="py-24 bg-background text-foreground transition-colors duration-500">
       <div className="container mx-auto px-6 md:px-12 max-w-6xl">
