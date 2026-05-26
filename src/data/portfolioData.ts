@@ -1,6 +1,8 @@
-import schoolImg1 from '../assets/projects/01_school/최은진_포트폴리오_4.jpg';
-import schoolImg2 from '../assets/projects/01_school/최은진_포트폴리오_5.jpg';
-import schoolImg3 from '../assets/projects/01_school/최은진_포트폴리오_6.jpg';
+import shelterLobby from '../assets/projects/01_school/로비.jpg';
+import shelterPage01 from '../assets/projects/01_school/졸업작품 Page01.jpg';
+import shelterPage02 from '../assets/projects/01_school/졸업작품 Page02.jpg';
+import shelterPage03 from '../assets/projects/01_school/졸업작품 Page03.jpg';
+import shelterTerrace from '../assets/projects/01_school/테라스.jpg';
 
 import kukboLoyaltyPersp from '../assets/projects/02_kukbo/Loyalty Gaming Perspective View.jpg';
 import kukboThumbnail from '../assets/projects/02_kukbo/kukbo_thumbnail.jpg';
@@ -74,19 +76,13 @@ export const portfolioData = {
     ],
   },
   techStack: {
-    design: [
+    tools: [
       { name: "3dsMax", icon: undefined },
       { name: "SketchUp", icon: undefined },
+      { name: "D5 render", icon: undefined },
       { name: "AutoCAD", icon: undefined },
-      { name: "V-Ray", icon: undefined }
-    ],
-    adobe: [
-      { name: "Adobe Photoshop", icon: undefined },
-      { name: "Adobe Illustrator", icon: undefined }
-    ],
-    office: [
-      { name: "Excel", icon: undefined },
-      { name: "PowerPoint", icon: undefined }
+      { name: "V-Ray", icon: undefined },
+      { name: "Adobe Photoshop", icon: undefined }
     ]
   },
   experiences: [
@@ -118,14 +114,14 @@ export const portfolioData = {
   projects: [
     {
       id: 1,
-      category: "01. 학교 프로젝트",
-      name: "인덕대학교 실내건축디자인 졸업 작품",
+      category: "01. UNIVERSITY GRADUATION WORK",
+      name: "A RUNAWAY YOUTH SHELTER",
       logo: undefined,
-      period: "2015.03 - 2018.02",
-      description: "실내건축디자인 전공 과정 중 진행한 주요 설계 및 3D 모델링 프로젝트",
-      tech: ["AutoCAD", "SketchUp", "Photoshop"],
-      detail: "인덕대학교 실내건축디자인과 재학 중 진행한 졸업 작품 및 주요 과제 프로젝트입니다. 공간의 기능과 미학을 고려한 설계를 바탕으로 3D 시각화 작업을 수행했습니다.",
-      images: [schoolImg1, schoolImg2, schoolImg3]
+      period: "2017.03 - 2017.12",
+      description: "자연의 연속성을 적용한 가출 청소년들을 위한 보호 및 치유 공간",
+      tech: ["AutoCAD", "SketchUp", "3dsMax", "Photoshop"],
+      detail: "가출 청소년들을 위한 사회 안전망을 구축하기 위한 보호 쉼터 공간 계획입니다. '자연의 연속성'을 컨셉으로, 살아 숨 쉬는 생명체에서 발견되는 유기적인 형태와 움직임을 공간에 적용했습니다.\n\n• 주요 특징:\n  - 유기적 연결(Organic Connection): 형태의 연속적 변화를 통한 활동적인 공간 구성\n  - 개방형 로비: 메인 입구와 중앙 계단의 천장을 오픈하여 극대화된 공간감 부여\n  - 치유 환경: 도심 속 자연(충숙근린공원)을 활용하여 청소년들의 심리적 불안감 해소 및 정서적 안정 도모\n  - 다목적 프로그램: 로비, 피트니스, 강당, 스터디룸, 테라스 등 다양한 활동 공간 배치",
+      images: [shelterLobby, shelterPage01, shelterPage02, shelterPage03, shelterTerrace]
     },
     {
       id: 2,
@@ -161,7 +157,7 @@ export const portfolioData = {
       detail: "코스펙에이비 재직 중 수행한 주요 건축 및 인테리어 평면 및 배치도 작업입니다. 설계 도면을 기반으로 공간의 구조를 명확하게 시각화하여 프로젝트의 이해도를 높였습니다.",
       images: [
         cospecPlan5, cospecPlan6, cospecPlan10, cospecPlan13, cospecPlan3,
-        cospecPlan4, cospecPlan14, cospecPlan15, cospecPlan1, cospecPlan2
+        cospecPlan4, cospecPlan14, cospecPlan15, cospecPlan2, cospecPlan1
       ]
     },
     {
@@ -174,8 +170,8 @@ export const portfolioData = {
       tech: ["3dsMax", "SketchUp", "AutoCAD", "Photoshop", "V-Ray"],
       detail: "코스펙에이비 재직 중 수행한 주요 고퀄리티 투시도 및 시각화 프로젝트입니다. 재질감과 조명을 정밀하게 구현하여 실감 나는 공간을 시각적으로 전달했습니다.",
       images: [
-        cospecPersp1, cospecPersp2, cospecPersp3, cospecPersp4, cospecPersp5,
-        cospecPersp7, cospecPersp8, cospecPersp9
+        cospecPersp1, cospecPersp8, cospecPersp7, cospecPersp5, cospecPersp9,
+        cospecPersp2, cospecPersp3, cospecPersp4
       ]
     },
     {

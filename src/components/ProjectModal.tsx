@@ -221,34 +221,69 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                             );
                           })}
                         </div>
-                      ) : project.id === 4 ? (
-                        <div className="mx-auto flex w-full max-w-3xl flex-col items-center gap-8">
-                          {detailImages.map((image, index) => {
-                            // persp_3 (index 2), persp_4 (index 3) to be 2-column
-                            if (index === 2) {
-                              return (
-                                <div key={index} className="grid grid-cols-2 gap-4 w-full">
-                                  <div className="relative overflow-hidden rounded-3xl bg-foreground/5">
-                                    <img src={detailImages[2]} alt="persp_3" className="w-full h-auto" />
-                                  </div>
-                                  <div className="relative overflow-hidden rounded-3xl bg-foreground/5">
-                                    <img src={detailImages[3]} alt="persp_4" className="w-full h-auto" />
-                                  </div>
-                                </div>
-                              );
-                            }
-                            if (index === 3) return null;
-                            
-                            return (
-                              <div key={index} className="relative w-full overflow-hidden rounded-3xl bg-foreground/5">
-                                <img
-                                  src={image}
-                                  alt={`${project.name} detail ${index + 1}`}
-                                  className="w-full h-auto object-contain"
-                                />
+                      ) : project.id === 3 ? (
+                        <div className="space-y-24">
+                          {[
+                            { label: "중심 배치도", images: [detailImages[0], detailImages[1]] },
+                            { label: "커뮤니티 배치도", images: [detailImages[2], detailImages[3]] },
+                            { label: "경관 배치도", images: [detailImages[4], detailImages[5]] },
+                            { label: "해안 배치도", images: [detailImages[6], detailImages[7]] },
+                            { label: "단위 세대", images: [detailImages[8], detailImages[9]] },
+                          ].map((group, groupIndex) => (
+                            <div key={groupIndex} className="space-y-8">
+                              <div className="flex items-center gap-4">
+                                <span className="text-primary font-black text-xs uppercase tracking-[0.3em]">Section {groupIndex + 1}</span>
+                                <h4 className="text-xl font-bold uppercase tracking-tight opacity-80">{group.label}</h4>
                               </div>
-                            );
-                          })}
+                              <div className="grid grid-cols-1 gap-8">
+                                {group.images.map((img, imgIndex) => (
+                                  <div key={imgIndex} className="relative w-full overflow-hidden rounded-[2rem] bg-foreground/5 border border-foreground/5 shadow-lg">
+                                    <img src={img} alt={`${group.label} ${imgIndex + 1}`} className="w-full h-auto" />
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      ) : project.id === 4 ? (
+                        <div className="space-y-24">
+                          {[
+                            { label: "스카이라운지 투시도", images: [detailImages[0]] },
+                            { label: "주거단지 조감도", images: [detailImages[1]] },
+                            { label: "커뮤니티 투시도", images: [detailImages[2]] },
+                            { label: "문주 투시도", images: [detailImages[3], detailImages[4]] },
+                            { label: "건물 시퀀스 투시도", images: [detailImages[5], detailImages[6], detailImages[7]] },
+                          ].map((group, groupIndex) => (
+                            <div key={groupIndex} className="space-y-8">
+                              <div className="flex items-center gap-4">
+                                <span className="text-primary font-black text-xs uppercase tracking-[0.3em]">View {groupIndex + 1}</span>
+                                <h4 className="text-xl font-bold uppercase tracking-tight opacity-80">{group.label}</h4>
+                              </div>
+                              <div className="grid grid-cols-1 gap-8">
+                                {group.label === "건물 시퀀스 투시도" ? (
+                                  <>
+                                    <div className="relative w-full overflow-hidden rounded-[2rem] bg-foreground/5 border border-foreground/5 shadow-lg">
+                                      <img src={group.images[0]} alt={`${group.label} 1`} className="w-full h-auto" />
+                                    </div>
+                                    <div className="grid grid-cols-2 gap-4">
+                                      <div className="relative w-full overflow-hidden rounded-2xl bg-foreground/5 border border-foreground/5 shadow-md aspect-[16/10]">
+                                        <img src={group.images[1]} alt={`${group.label} 2`} className="w-full h-full object-cover" />
+                                      </div>
+                                      <div className="relative w-full overflow-hidden rounded-2xl bg-foreground/5 border border-foreground/5 shadow-md aspect-[16/10]">
+                                        <img src={group.images[2]} alt={`${group.label} 3`} className="w-full h-full object-cover" />
+                                      </div>
+                                    </div>
+                                  </>
+                                ) : (
+                                  group.images.map((img, imgIndex) => (
+                                    <div key={imgIndex} className="relative w-full overflow-hidden rounded-[2rem] bg-foreground/5 border border-foreground/5 shadow-lg">
+                                      <img src={img} alt={`${group.label} ${imgIndex + 1}`} className="w-full h-auto" />
+                                    </div>
+                                  ))
+                                )}
+                              </div>
+                            </div>
+                          ))}
                         </div>
                       ) : (
                         <div className="mx-auto flex w-full max-w-3xl flex-col items-center gap-8">
