@@ -92,7 +92,7 @@ function App() {
       {/* Sections */}
       <About />
       <Education />
-      <Skills skills={data.techStack} />
+      <Skills />
       <div className="container mx-auto px-6 max-w-6xl">
         <hr className="border-t border-foreground/5" />
       </div>

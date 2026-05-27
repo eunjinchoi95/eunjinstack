@@ -1,28 +1,22 @@
 import { motion } from 'framer-motion';
 
-interface TechItem {
-  name: string;
-  icon?: string;
-}
+import logo3dsMax from '../assets/tech_icons/3dsmax_logo.png';
+import logoSketchUp from '../assets/tech_icons/sketchup_logo.png';
+import logoD5Render from '../assets/tech_icons/d5render_logo.png';
+import logoAutoCAD from '../assets/tech_icons/Autocad_logo.png';
+import logoVRay from '../assets/tech_icons/v-ray_logo.png';
+import logoPhotoshop from '../assets/tech_icons/Adobe Photoshop_logo.png';
 
-interface SkillsProps {
-  skills: {
-    tools: TechItem[];
-  };
-}
+const techItems = [
+  { name: '3dsMax', icon: logo3dsMax },
+  { name: 'SketchUp', icon: logoSketchUp },
+  { name: 'D5 Render', icon: logoD5Render },
+  { name: 'AutoCAD', icon: logoAutoCAD },
+  { name: 'V-Ray', icon: logoVRay },
+  { name: 'Photoshop', icon: logoPhotoshop },
+];
 
-const getTechColor = (tech: string) => {
-  const t = tech.toLowerCase();
-  if (t.includes('autocad')) return 'bg-red-600/10 text-red-600 border-red-600/30';
-  if (t.includes('sketchup')) return 'bg-red-500/10 text-red-500 border-red-500/30';
-  if (t.includes('3dsmax')) return 'bg-cyan-600/10 text-cyan-600 border-cyan-600/30';
-  if (t.includes('photoshop')) return 'bg-blue-600/10 text-blue-600 border-blue-600/30';
-  if (t.includes('v-ray')) return 'bg-rose-500/10 text-rose-500 border-rose-500/30';
-  if (t.includes('d5 render')) return 'bg-indigo-500/10 text-indigo-500 border-indigo-500/30';
-  return 'bg-foreground/5 text-foreground/60 border-foreground/10';
-};
-
-export default function Skills({ skills }: SkillsProps) {
+export default function Skills() {
   return (
     <section id="skills" className="py-24 bg-background text-foreground border-t border-foreground/5">
       <div className="container mx-auto px-6 md:px-12 max-w-6xl">
@@ -38,31 +32,23 @@ export default function Skills({ skills }: SkillsProps) {
           <div className="h-1.5 w-24 bg-primary rounded-full" />
         </motion.div>
         
-        <div className="bg-foreground/[0.02] p-8 md:p-14 rounded-[2.5rem] border border-foreground/5 shadow-inner">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={{
-              hidden: { opacity: 0 },
-              visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
-            }}
-            className="flex flex-wrap gap-4"
-          >
-            {skills.tools.map(item => (
-              <motion.span 
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {techItems.map((item) => (
+              <motion.div 
                 variants={{
                   hidden: { opacity: 0, scale: 0.9 },
                   visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } }
                 }}
                 key={item.name} 
-                className={`flex items-center px-8 py-4 rounded-2xl text-lg font-bold shadow-sm border ${getTechColor(item.name)} transition-all hover:scale-105 hover:shadow-md`}
+                className="flex flex-col items-center justify-center p-6 bg-foreground/[0.02] rounded-3xl border border-foreground/5 shadow-sm transition-all hover:scale-105 hover:shadow-lg"
               >
-                {item.name}
-              </motion.span>
+                <img src={item.icon} alt={item.name} className="w-16 h-16 object-contain" />
+                <span className="text-xs font-bold mt-4 uppercase tracking-wider text-foreground/80 whitespace-nowrap">
+                  {item.name}
+                </span>
+              </motion.div>
             ))}
-          </motion.div>
-        </div>
+          </div>
       </div>
     </section>
   );
