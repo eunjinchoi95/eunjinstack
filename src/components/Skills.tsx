@@ -26,11 +26,17 @@ export default function Skills({ skills }: SkillsProps) {
   return (
     <section id="skills" className="py-24 bg-background text-foreground border-t border-foreground/5">
       <div className="container mx-auto px-6 md:px-12 max-w-6xl">
-        <div className="mb-16">
-          <h2 className="text-4xl font-black tracking-tight uppercase">
-            Design Tools & Skills
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-20"
+        >
+          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4">
+            Design Tools <span className="text-primary italic">& Skills</span>
           </h2>
-        </div>
+          <div className="h-1.5 w-24 bg-primary rounded-full" />
+        </motion.div>
         
         <div className="bg-foreground/[0.02] p-8 md:p-14 rounded-[2.5rem] border border-foreground/5 shadow-inner">
           <motion.div 

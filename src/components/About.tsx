@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Mail, BrainCircuit, Phone } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
-import profileImage from '../assets/images/profile_new.jpg';
+import profileImage from '../assets/images/profile_new.webp';
 
 export default function About() {
   const { about } = portfolioData;
@@ -40,14 +40,20 @@ export default function About() {
               newParts.push(
                 <motion.span 
                   key={`${s}-${i}`}
-                  initial={{ backgroundSize: "0% 2px" }}
-                  whileInView={{ backgroundSize: "100% 2px" }}
-                  transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="relative text-gray-900 mx-1 inline-block bg-gradient-to-r from-[#ff3c00] to-[#ff3c00] bg-no-repeat transition-all font-medium pb-0.5"
-                  style={{ backgroundPosition: "0 100%" }}
+                  className="mx-0.5 inline-flex font-light whitespace-nowrap"
                 >
-                  {s}
+                  {s.split('').map((char, charIdx) => (
+                    <span key={charIdx} className="relative inline-block px-[0.5px]">
+                      {char !== ' ' && (
+                        <span className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-[3px] h-[3px] bg-primary rounded-full" />
+                      )}
+                      {char}
+                    </span>
+                  ))}
                 </motion.span>
               );
             } else if (s !== '') {
@@ -151,7 +157,7 @@ export default function About() {
                 </h2>
               </div>
               
-              <div className="space-y-6">
+              <div className="space-y-12">
                 {about.summary.map((text, i) => (
                   <motion.p 
                     key={i} 
@@ -159,7 +165,8 @@ export default function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.3 + (i * 0.1) }}
                     viewport={{ once: true }}
-                    className="text-base md:text-lg text-foreground/80 leading-relaxed font-medium text-left"
+                    className="text-base md:text-lg text-foreground/80 font-light text-left"
+                    style={{ lineHeight: 3.5 }}
                   >
                     {renderHighlightedText(text)}
                   </motion.p>

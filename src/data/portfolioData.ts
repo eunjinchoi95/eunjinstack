@@ -1,59 +1,59 @@
-import shelterLobby from '../assets/projects/01_school/로비.jpg';
-import shelterPage01 from '../assets/projects/01_school/졸업작품 Page01.jpg';
-import shelterPage02 from '../assets/projects/01_school/졸업작품 Page02.jpg';
-import shelterPage03 from '../assets/projects/01_school/졸업작품 Page03.jpg';
-import shelterTerrace from '../assets/projects/01_school/테라스.jpg';
+import shelterLobby from '../assets/projects/01_school/로비.webp';
+import shelterPage01 from '../assets/projects/01_school/졸업작품 Page01.webp';
+import shelterPage02 from '../assets/projects/01_school/졸업작품 Page02.webp';
+import shelterPage03 from '../assets/projects/01_school/졸업작품 Page03.webp';
+import shelterTerrace from '../assets/projects/01_school/테라스.webp';
 
-import kukboLoyaltyPersp from '../assets/projects/02_kukbo/Loyalty Gaming Perspective View.jpg';
-import kukboThumbnail from '../assets/projects/02_kukbo/kukbo_thumbnail.jpg';
-import kukboLoyaltyPlan from '../assets/projects/02_kukbo/Loyalty Gaming Floor Plan.jpg';
-import kukboLoyalty1 from '../assets/projects/02_kukbo/Loyalty_Gaming_1.jpg';
-import kukboLoyalty2 from '../assets/projects/02_kukbo/Loyalty_Gaming_2.jpg';
+import kukboLoyaltyPersp from '../assets/projects/02_kukbo/Loyalty Gaming Perspective View.webp';
+import kukboThumbnail from '../assets/projects/02_kukbo/kukbo_thumbnail.webp';
+import kukboLoyaltyPlan from '../assets/projects/02_kukbo/Loyalty Gaming Floor Plan.webp';
+import kukboLoyalty1 from '../assets/projects/02_kukbo/Loyalty_Gaming_1.webp';
+import kukboLoyalty2 from '../assets/projects/02_kukbo/Loyalty_Gaming_2.webp';
 
-import kukboMainColPersp from '../assets/projects/02_kukbo/Main Column Perspective View.jpg';
-import kukboMainColPlan from '../assets/projects/02_kukbo/Main Column Floor Plan.jpg';
-import kukboMainCol1 from '../assets/projects/02_kukbo/Main_Column_1.jpg';
-import kukboMainCol2 from '../assets/projects/02_kukbo/Main_Column_2.jpg';
+import kukboMainColPersp from '../assets/projects/02_kukbo/Main Column Perspective View.webp';
+import kukboMainColPlan from '../assets/projects/02_kukbo/Main Column Floor Plan.webp';
+import kukboMainCol1 from '../assets/projects/02_kukbo/Main_Column_1.webp';
+import kukboMainCol2 from '../assets/projects/02_kukbo/Main_Column_2.webp';
 
-import kukboMassPersp from '../assets/projects/02_kukbo/Mass Gaming Wall Perspective View.jpg';
-import kukboMassPlan from '../assets/projects/02_kukbo/Mass Gaming Wall Floor Plan.jpg';
-import kukboMass1 from '../assets/projects/02_kukbo/Mass_Gaming_Wall_1.jpg';
-import kukboMass2 from '../assets/projects/02_kukbo/Mass_Gaming_Wall_2.jpg';
+import kukboMassPersp from '../assets/projects/02_kukbo/Mass Gaming Wall Perspective View.webp';
+import kukboMassPlan from '../assets/projects/02_kukbo/Mass Gaming Wall Floor Plan.webp';
+import kukboMass1 from '../assets/projects/02_kukbo/Mass_Gaming_Wall_1.webp';
+import kukboMass2 from '../assets/projects/02_kukbo/Mass_Gaming_Wall_2.webp';
 
-import kukboEntranceDoorPersp from '../assets/projects/02_kukbo/Secondary Entrance Door Perspective View.jpg';
-import kukboEntranceDoorPlan from '../assets/projects/02_kukbo/Secondary Entrance Door Floor Plan.jpg';
-import kukboEntranceDoor1 from '../assets/projects/02_kukbo/Secondary_Entrance_Door_1.jpg';
-import kukboEntranceDoor2 from '../assets/projects/02_kukbo/Secondary_Entrance_Door_2.jpg';
+import kukboEntranceDoorPersp from '../assets/projects/02_kukbo/Secondary Entrance Door Perspective View.webp';
+import kukboEntranceDoorPlan from '../assets/projects/02_kukbo/Secondary Entrance Door Floor Plan.webp';
+import kukboEntranceDoor1 from '../assets/projects/02_kukbo/Secondary_Entrance_Door_1.webp';
+import kukboEntranceDoor2 from '../assets/projects/02_kukbo/Secondary_Entrance_Door_2.webp';
 
-import kukboEntranceWallPersp from '../assets/projects/02_kukbo/Secondary Entrance Wall Perspective View.jpg';
-import kukboEntranceWallPlan from '../assets/projects/02_kukbo/Secondary Entrance Wall Floor Plan.jpg';
-import kukboEntranceWall1 from '../assets/projects/02_kukbo/Secondary_Entrance_Wall_1.jpg';
-import kukboEntranceWall2 from '../assets/projects/02_kukbo/Secondary_Entrance_Wall_2.jpg';
+import kukboEntranceWallPersp from '../assets/projects/02_kukbo/Secondary Entrance Wall Perspective View.webp';
+import kukboEntranceWallPlan from '../assets/projects/02_kukbo/Secondary Entrance Wall Floor Plan.webp';
+import kukboEntranceWall1 from '../assets/projects/02_kukbo/Secondary_Entrance_Wall_1.webp';
+import kukboEntranceWall2 from '../assets/projects/02_kukbo/Secondary_Entrance_Wall_2.webp';
 
-import cospecPlan1 from '../assets/projects/03_cospec/plans/plan_1.jpg';
-import cospecPlan2 from '../assets/projects/03_cospec/plans/plan_2.jpg';
-import cospecPlan3 from '../assets/projects/03_cospec/plans/plan_3.jpg';
-import cospecPlan4 from '../assets/projects/03_cospec/plans/plan_4.jpg';
-import cospecPlan5 from '../assets/projects/03_cospec/plans/plan_5.jpg';
-import cospecPlan6 from '../assets/projects/03_cospec/plans/plan_6.jpg';
-import cospecPlan10 from '../assets/projects/03_cospec/plans/plan_10.jpg';
-import cospecPlan13 from '../assets/projects/03_cospec/plans/plan_13.jpg';
-import cospecPlan14 from '../assets/projects/03_cospec/plans/plan_14.jpg';
-import cospecPlan15 from '../assets/projects/03_cospec/plans/plan_15.jpg';
+import cospecPlan1 from '../assets/projects/03_cospec/plans/plan_1.webp';
+import cospecPlan2 from '../assets/projects/03_cospec/plans/plan_2.webp';
+import cospecPlan3 from '../assets/projects/03_cospec/plans/plan_3.webp';
+import cospecPlan4 from '../assets/projects/03_cospec/plans/plan_4.webp';
+import cospecPlan5 from '../assets/projects/03_cospec/plans/plan_5.webp';
+import cospecPlan6 from '../assets/projects/03_cospec/plans/plan_6.webp';
+import cospecPlan10 from '../assets/projects/03_cospec/plans/plan_10.webp';
+import cospecPlan13 from '../assets/projects/03_cospec/plans/plan_13.webp';
+import cospecPlan14 from '../assets/projects/03_cospec/plans/plan_14.webp';
+import cospecPlan15 from '../assets/projects/03_cospec/plans/plan_15.webp';
 
-import cospecPersp1 from '../assets/projects/03_cospec/perspectives/persp_1.jpg';
-import cospecPersp2 from '../assets/projects/03_cospec/perspectives/persp_2.jpg';
-import cospecPersp3 from '../assets/projects/03_cospec/perspectives/persp_3.jpg';
-import cospecPersp4 from '../assets/projects/03_cospec/perspectives/persp_4.jpg';
-import cospecPersp5 from '../assets/projects/03_cospec/perspectives/persp_5.jpg';
-import cospecPersp7 from '../assets/projects/03_cospec/perspectives/persp_7.jpg';
-import cospecPersp8 from '../assets/projects/03_cospec/perspectives/persp_8.jpg';
-import cospecPersp9 from '../assets/projects/03_cospec/perspectives/persp_9.jpg';
+import cospecPersp1 from '../assets/projects/03_cospec/perspectives/persp_1.webp';
+import cospecPersp2 from '../assets/projects/03_cospec/perspectives/persp_2.webp';
+import cospecPersp3 from '../assets/projects/03_cospec/perspectives/persp_3.webp';
+import cospecPersp4 from '../assets/projects/03_cospec/perspectives/persp_4.webp';
+import cospecPersp5 from '../assets/projects/03_cospec/perspectives/persp_5.webp';
+import cospecPersp7 from '../assets/projects/03_cospec/perspectives/persp_7.webp';
+import cospecPersp8 from '../assets/projects/03_cospec/perspectives/persp_8.webp';
+import cospecPersp9 from '../assets/projects/03_cospec/perspectives/persp_9.webp';
 
-import hanmacImg1 from '../assets/projects/04_hanmac/260424_사운즈한남_(1)_LED전광판시안_1.jpg';
-import hanmacImg2 from '../assets/projects/04_hanmac/260424_사운즈한남_(2)_LED전광판시안_1.jpg';
-import hanmacImg3 from '../assets/projects/04_hanmac/260424_사운즈한남_(3)_LED전광판시안_1.jpg';
-import hanmacImg4 from '../assets/projects/04_hanmac/(높이오타있음(2520))260424_사운즈한남_(4)_LED전광판시안_1.jpg';
+import hanmacImg1 from '../assets/projects/04_hanmac/260424_사운즈한남_(1)_LED전광판시안_1.webp';
+import hanmacImg2 from '../assets/projects/04_hanmac/260424_사운즈한남_(2)_LED전광판시안_1.webp';
+import hanmacImg3 from '../assets/projects/04_hanmac/260424_사운즈한남_(3)_LED전광판시안_1.webp';
+import hanmacImg4 from '../assets/projects/04_hanmac/(높이오타있음(2520))260424_사운즈한남_(4)_LED전광판시안_1.webp';
 
 export const portfolioData = {
   hero: {

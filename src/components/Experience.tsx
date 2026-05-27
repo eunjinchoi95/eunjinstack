@@ -47,7 +47,7 @@ export default function Experience({ projects }: ExperienceProps) {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">
+          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4">
             Project <span className="text-primary italic">Portfolio</span>
           </h2>
           <div className="h-1.5 w-24 bg-primary rounded-full" />
