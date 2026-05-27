@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Mail, BrainCircuit, Phone } from 'lucide-react';
+import { MapPin, Mail, Phone } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import profileImage from '../assets/images/profile_new.webp';
 import aboutMeImage from '../assets/images/about_me.webp';
