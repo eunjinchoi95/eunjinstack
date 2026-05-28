@@ -8,6 +8,7 @@ export interface ProjectData {
   category?: string;
   name: string;
   logo?: string;
+  thumbnail?: string;
   period: string;
   description: string;
   tech?: string[];
@@ -42,7 +43,7 @@ export default function Projects({ projects }: ProjectsProps) {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {projects.map((project, index) => {
-            const thumbnail = project.images && project.images.length > 0 ? project.images[0] : project.logo;
+            const thumbnail = project.thumbnail || (project.images && project.images.length > 0 ? project.images[0] : project.logo);
 
             return (
             <motion.div 
@@ -80,13 +81,6 @@ export default function Projects({ projects }: ProjectsProps) {
                   {project.name}
                 </h3>
                 <p className="opacity-60 text-sm line-clamp-2 leading-relaxed">{project.description}</p>
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {project.tech?.map(tag => (
-                    <span key={tag} className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 bg-foreground/5 rounded-full transition-colors">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
               </div>
             </motion.div>
             );

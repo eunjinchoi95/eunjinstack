@@ -45,6 +45,16 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
 
   const detailImages = project.images || [];
 
+  const groupImages = (images: string[]) => {
+    // Basic grouping logic: assuming 1st is front, 2nd is left, 3rd is right
+    // Handles 2 images cases too (front and alt)
+    return {
+      front: images[0] || null,
+      left: images[1] || null,
+      right: images[2] || null
+    };
+  };
+
   const renderDescriptionWithLinks = (text: string) => {
     const urlRegex = /(https?:\/\/[^\s]+)/g;
     return text.split(urlRegex).map((part, i) => {
@@ -284,6 +294,161 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                               </div>
                             </div>
                           ))}
+                        </div>
+                      ) : project.id === 5 ? (
+                        <div className="space-y-24">
+                          <div className="space-y-8">
+                            <div className="flex items-center gap-4">
+                              <span className="text-primary font-black text-xs uppercase tracking-[0.3em]">Phase 1</span>
+                              <h4 className="text-xl font-bold uppercase tracking-tight opacity-80">3D 투시도 시안</h4>
+                            </div>
+                            <div className="flex flex-col gap-4">
+                              {/* Front View */}
+                              <div className="relative w-full overflow-hidden rounded-[2rem] bg-foreground/5 border border-foreground/5 shadow-lg">
+                                <p className="absolute top-4 left-6 z-10 text-[10px] font-black uppercase tracking-widest bg-background/50 backdrop-blur-sm px-3 py-1 rounded-full opacity-60">Front View</p>
+                                <img src={detailImages[0]} alt="Front View" className="w-full h-auto" />
+                              </div>
+                              {/* Left & Right Views */}
+                              <div className="grid grid-cols-2 gap-4">
+                                <div className="relative overflow-hidden rounded-2xl bg-foreground/5 border border-foreground/5 shadow-md aspect-[16/10]">
+                                  <p className="absolute top-3 left-4 z-10 text-[9px] font-black uppercase tracking-widest bg-background/50 backdrop-blur-sm px-2 py-0.5 rounded-full opacity-60">Left View</p>
+                                  <img src={detailImages[1]} alt="Left View" className="w-full h-full object-cover" />
+                                </div>
+                                <div className="relative overflow-hidden rounded-2xl bg-foreground/5 border border-foreground/5 shadow-md aspect-[16/10]">
+                                  <p className="absolute top-3 left-4 z-10 text-[9px] font-black uppercase tracking-widest bg-background/50 backdrop-blur-sm px-2 py-0.5 rounded-full opacity-60">Right View</p>
+                                  <img src={detailImages[2]} alt="Right View" className="w-full h-full object-cover" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="space-y-8">
+                            <div className="flex items-center gap-4">
+                              <span className="text-primary font-black text-xs uppercase tracking-[0.3em]">Phase 2</span>
+                              <h4 className="text-xl font-bold uppercase tracking-tight opacity-80">부스 설계 도면</h4>
+                            </div>
+                            <div className="flex flex-col gap-8">
+                              {detailImages.slice(3, 7).map((img, i) => (
+                                <div key={i} className="relative w-full overflow-hidden rounded-[2rem] bg-foreground/5 border border-foreground/5 shadow-lg">
+                                  <img src={img} alt={`Drawing ${i + 1}`} className="w-full h-auto" />
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                          <div className="space-y-8">
+                            <div className="flex items-center gap-4">
+                              <span className="text-primary font-black text-xs uppercase tracking-[0.3em]">Phase 3</span>
+                              <h4 className="text-xl font-bold uppercase tracking-tight opacity-80">가구 제작 도면</h4>
+                            </div>
+                            <div className="relative w-full overflow-hidden rounded-[2rem] bg-foreground/5 border border-foreground/5 shadow-lg">
+                              <img src={detailImages[7]} alt="Furniture Detail Drawing" className="w-full h-auto" />
+                            </div>
+                          </div>
+                        </div>
+                      ) : project.id === 6 ? (
+                        <div className="space-y-24">
+                          {[
+                            { label: "설계도", images: detailImages.slice(0, 4) },
+                            { label: "결선도", images: detailImages.slice(4, 8) },
+                            { label: "배치도", images: detailImages.slice(8, 12) },
+                          ].map((group, groupIndex) => (
+                            <div key={groupIndex} className="space-y-8">
+                              <div className="flex items-center gap-4">
+                                <span className="text-primary font-black text-xs uppercase tracking-[0.3em]">Type {groupIndex + 1}</span>
+                                <h4 className="text-xl font-bold uppercase tracking-tight opacity-80">{group.label}</h4>
+                              </div>
+                              <div className="grid grid-cols-2 gap-4">
+                                {group.images.map((img, imgIndex) => (
+                                  <div key={imgIndex} className="relative w-full overflow-hidden rounded-2xl bg-foreground/5 border border-foreground/5 shadow-md aspect-[4/3]">
+                                    <img src={img} alt={`${group.label} ${imgIndex + 1}`} className="w-full h-full object-cover" />
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      ) : project.id === 7 ? (
+                        <div className="space-y-24">
+                          {[
+                            { label: "방송 스튜디오", images: groupImages(detailImages.slice(0, 2)) },
+                            { label: "교회 대강당", images: groupImages(detailImages.slice(2, 5)) },
+                            { label: "교회 소강당 (A)", images: groupImages(detailImages.slice(5, 8)) },
+                            { label: "교회 소강당 (B)", images: groupImages(detailImages.slice(8, 11)) },
+                            { label: "대형 교회 본당", images: groupImages(detailImages.slice(11, 14)) },
+                            { label: "기업 로비", images: groupImages(detailImages.slice(14)) },
+                          ].map((group, groupIndex) => (
+                            <div key={groupIndex} className="space-y-8">
+                              <div className="flex items-center gap-4">
+                                <span className="text-primary font-black text-xs uppercase tracking-[0.3em]">Project {groupIndex + 1}</span>
+                                <h4 className="text-xl font-bold uppercase tracking-tight opacity-80">{group.label}</h4>
+                              </div>
+                              <div className="flex flex-col gap-4">
+                                {/* Front View - Large */}
+                                {group.images.front && (
+                                  <div className="relative w-full overflow-hidden rounded-[2rem] bg-foreground/5 border border-foreground/5 shadow-lg">
+                                    <p className="absolute top-4 left-6 z-10 text-[10px] font-black uppercase tracking-widest bg-background/50 backdrop-blur-sm px-3 py-1 rounded-full opacity-60">Front View</p>
+                                    <img src={group.images.front} alt={`${group.label} Front`} className="w-full h-auto" />
+                                  </div>
+                                )}
+                                
+                                {/* 방송 스튜디오 특수 레이아웃: 2번째 사진도 크게 (Top View) */}
+                                {group.label === "방송 스튜디오" ? (
+                                  group.images.left && (
+                                    <div className="relative w-full overflow-hidden rounded-[2rem] bg-foreground/5 border border-foreground/5 shadow-lg">
+                                      <p className="absolute top-4 left-6 z-10 text-[10px] font-black uppercase tracking-widest bg-background/50 backdrop-blur-sm px-3 py-1 rounded-full opacity-60">Top View</p>
+                                      <img src={group.images.left} alt={`${group.label} Top`} className="w-full h-auto" />
+                                    </div>
+                                  )
+                                ) : (
+                                  /* Left & Right Views - Small Grid (기존 3장 구성용) */
+                                  (group.images.left || group.images.right) && (
+                                    <div className="grid grid-cols-2 gap-4">
+                                      {group.images.left && (
+                                        <div className="relative overflow-hidden rounded-2xl bg-foreground/5 border border-foreground/5 shadow-md aspect-[16/10]">
+                                          <p className="absolute top-3 left-4 z-10 text-[9px] font-black uppercase tracking-widest bg-background/50 backdrop-blur-sm px-2 py-0.5 rounded-full opacity-60">Left View</p>
+                                          <img src={group.images.left} alt={`${group.label} Left`} className="w-full h-full object-cover" />
+                                        </div>
+                                      )}
+                                      {group.images.right && (
+                                        <div className="relative overflow-hidden rounded-2xl bg-foreground/5 border border-foreground/5 shadow-md aspect-[16/10]">
+                                          <p className="absolute top-3 left-4 z-10 text-[9px] font-black uppercase tracking-widest bg-background/50 backdrop-blur-sm px-2 py-0.5 rounded-full opacity-60">Right View</p>
+                                          <img src={group.images.right} alt={`${group.label} Right`} className="w-full h-full object-cover" />
+                                        </div>
+                                      )}
+                                    </div>
+                                  )
+                                )}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      ) : project.id === 8 ? (
+                        <div className="space-y-32">
+                          {Array.from({ length: detailImages.length / 2 }).map((_, i) => {
+                            const labels = ["광장", "교회 (A)", "병원", "세미나실", "교회 (B)", "대학교", "매장", "관공서", "호텔"];
+                            return (
+                              <div key={i} className="space-y-10">
+                                <div className="flex items-center gap-4 justify-center">
+                                  <div className="h-px w-12 bg-primary/20" />
+                                  <h4 className="text-xl font-black uppercase tracking-widest text-primary/60">{labels[i]}</h4>
+                                  <div className="h-px w-12 bg-primary/20" />
+                                </div>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                  <div className="space-y-4">
+                                    <p className="text-[10px] font-black uppercase opacity-30 tracking-widest text-center">Before</p>
+                                    <div className="relative overflow-hidden rounded-[2rem] bg-foreground/5 border border-foreground/5 aspect-[4/3] shadow-inner">
+                                      <img src={detailImages[i * 2]} alt="Before" className="w-full h-full object-cover" />
+                                    </div>
+                                  </div>
+                                  <div className="space-y-4">
+                                    <p className="text-[10px] font-black uppercase text-primary/40 tracking-widest text-center">After (Simulation)</p>
+                                    <div className="relative overflow-hidden rounded-[2rem] bg-foreground/5 border border-primary/20 aspect-[4/3] shadow-2xl ring-4 ring-primary/5">
+                                      <img src={detailImages[i * 2 + 1]} alt="After" className="w-full h-full object-cover" />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          })}
                         </div>
                       ) : (
                         <div className="mx-auto flex w-full max-w-3xl flex-col items-center gap-8">

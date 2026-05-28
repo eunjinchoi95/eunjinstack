@@ -4,18 +4,6 @@ import { ExternalLink } from 'lucide-react';
 import ProjectModal from './ProjectModal';
 import type { ProjectData } from './Projects';
 
-// Shared Tech brand colors mapping
-const getTechColor = (tech: string) => {
-  const t = tech.toLowerCase();
-  if (t.includes('autocad')) return 'bg-blue-600/10 text-blue-600 border-blue-600/20';
-  if (t.includes('sketchup')) return 'bg-red-500/10 text-red-500 border-red-500/20';
-  if (t.includes('3dsmax')) return 'bg-emerald-600/10 text-emerald-600 border-emerald-600/20';
-  if (t.includes('photoshop')) return 'bg-blue-400/10 text-blue-500 border-blue-400/20';
-  if (t.includes('v-ray')) return 'bg-orange-500/10 text-orange-500 border-orange-500/20';
-  if (t.includes('illustrator')) return 'bg-orange-600/10 text-orange-600 border-orange-600/20';
-  return 'bg-foreground/5 text-foreground/60 border-foreground/10';
-};
-
 interface WorkItem {
   id: number;
   company: string;
@@ -67,9 +55,9 @@ export default function Experience({ projects }: ExperienceProps) {
             >
               {/* Project Image Preview */}
               <div className="relative aspect-[16/10] overflow-hidden bg-foreground/5">
-                {proj.images && proj.images.length > 0 ? (
+                {proj.thumbnail || (proj.images && proj.images.length > 0) ? (
                   <img 
-                    src={proj.images[0]} 
+                    src={proj.thumbnail || (proj.images ? proj.images[0] : '')} 
                     alt={proj.name} 
                     className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
                   />
@@ -100,17 +88,9 @@ export default function Experience({ projects }: ExperienceProps) {
                   </p>
                 </div>
                 
-                <p className="text-foreground/60 text-[15px] leading-relaxed mb-8 flex-grow">
+                <p className="text-foreground/60 text-[15px] leading-relaxed flex-grow">
                   {proj.description}
                 </p>
-                
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-foreground/5">
-                  {proj.tech?.map(tech => (
-                    <span key={tech} className={`px-3 py-1.5 rounded-lg text-[10px] uppercase font-black tracking-widest border transition-all duration-300 ${getTechColor(tech)}`}>
-                      {tech}
-                    </span>
-                  ))}
-                </div>
               </div>
             </motion.div>
           ))}
