@@ -32,8 +32,8 @@ const Navbar = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-background/80 backdrop-blur-md py-4 shadow-sm border-b border-foreground/5' 
-          : 'bg-transparent py-6'
+          ? 'bg-background/80 backdrop-blur-md py-4 shadow-sm border-b border-foreground/5 text-foreground' 
+          : 'bg-transparent py-6 text-white'
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
@@ -47,7 +47,9 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="px-4 py-2 text-[13px] font-bold uppercase tracking-widest hover:text-primary transition-all rounded-full hover:bg-foreground/5"
+              className={`px-4 py-2 text-[13px] font-bold uppercase tracking-widest hover:text-primary transition-all rounded-full ${
+                isScrolled ? 'hover:bg-foreground/5' : 'hover:bg-white/10'
+              }`}
             >
               {link.name}
             </a>
