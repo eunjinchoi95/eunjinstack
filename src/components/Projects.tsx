@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useRef, useState, lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
-import ProjectModal from './ProjectModal';
+
+// 모달은 무거운 컴포넌트라 첫 오픈 시점까지 청크 로딩을 지연 (코드 스플릿)
+const ProjectModal = lazy(() => import('./ProjectModal'));
 
 export interface ProjectData {
   id: number;
@@ -23,6 +25,9 @@ interface ProjectsProps {
 export default function Projects({ projects }: ProjectsProps) {
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  // 한 번이라도 모달을 연 적 있으면 계속 마운트 유지 → exit 애니메이션 보존하면서도 첫 오픈 전까지 청크 미로딩
+  const modalEverOpened = useRef(false);
+  if (isModalOpen) modalEverOpened.current = true;
 
   const handleProjectClick = (project: ProjectData) => {
     setSelectedProject(project);
@@ -57,9 +62,11 @@ export default function Projects({ projects }: ProjectsProps) {
             >
               <div className="relative aspect-[16/10] bg-foreground/5 rounded-3xl overflow-hidden border border-foreground/5 mb-6 transition-colors">
                 {thumbnail ? (
-                  <img 
-                    src={thumbnail} 
-                    alt={project.name} 
+                  <img
+                    src={thumbnail}
+                    alt={project.name}
+                    loading="lazy"
+                    decoding="async"
                     className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500 bg-white"
                   />
                 ) : (
@@ -88,11 +95,15 @@ export default function Projects({ projects }: ProjectsProps) {
         </div>
       </div>
 
-      <ProjectModal 
-        project={selectedProject}
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
+      {modalEverOpened.current && (
+        <Suspense fallback={null}>
+          <ProjectModal
+            project={selectedProject}
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+          />
+        </Suspense>
+      )}
     </section>
   );
 }

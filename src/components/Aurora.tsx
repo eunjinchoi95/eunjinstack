@@ -176,8 +176,11 @@ export default function Aurora(props: AuroraProps) {
     ctn.appendChild(gl.canvas);
 
     let animateId = 0;
-    const update = (t: number) => {
-      animateId = requestAnimationFrame(update);
+    let isVisible = true;
+    // 사용자가 모션 최소화를 켜둔 경우 애니메이션 루프를 돌리지 않고 정적 1프레임만 렌더
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const renderFrame = (t: number) => {
       const { time = t * 0.01, speed = 1.0 } = propsRef.current;
       if (program) {
         program.uniforms.uTime.value = time * speed * 0.1;
@@ -191,12 +194,40 @@ export default function Aurora(props: AuroraProps) {
         renderer.render({ scene: mesh });
       }
     };
-    animateId = requestAnimationFrame(update);
+
+    const update = (t: number) => {
+      // 화면 밖이거나 모션 최소화면 다음 프레임 예약 중단 (GPU/CPU 낭비 방지)
+      if (!isVisible || prefersReduced) {
+        animateId = 0;
+        return;
+      }
+      animateId = requestAnimationFrame(update);
+      renderFrame(t);
+    };
+
+    // hero가 뷰포트 밖으로 나가면 루프 정지, 다시 들어오면 재개
+    const io = new IntersectionObserver(
+      entries => {
+        isVisible = entries[0].isIntersecting;
+        if (isVisible && !prefersReduced && animateId === 0) {
+          animateId = requestAnimationFrame(update);
+        }
+      },
+      { threshold: 0 }
+    );
+    io.observe(ctn);
 
     resize();
 
+    if (prefersReduced) {
+      renderFrame(0);
+    } else {
+      animateId = requestAnimationFrame(update);
+    }
+
     return () => {
       cancelAnimationFrame(animateId);
+      io.disconnect();
       window.removeEventListener('resize', resize);
       if (ctn && gl.canvas.parentNode === ctn) {
         ctn.removeChild(gl.canvas);

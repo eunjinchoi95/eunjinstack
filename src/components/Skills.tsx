@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 
-import logo3dsMax from '../assets/tech_icons/3dsmax_logo.png';
-import logoSketchUp from '../assets/tech_icons/sketchup_logo.png';
-import logoD5Render from '../assets/tech_icons/d5render_logo.png';
-import logoAutoCAD from '../assets/tech_icons/Autocad_logo.png';
-import logoVRay from '../assets/tech_icons/v-ray_logo.png';
-import logoPhotoshop from '../assets/tech_icons/Adobe Photoshop_logo.png';
+import logo3dsMax from '../assets/tech_icons/3dsmax_logo.webp';
+import logoSketchUp from '../assets/tech_icons/sketchup_logo.webp';
+import logoD5Render from '../assets/tech_icons/d5render_logo.webp';
+import logoAutoCAD from '../assets/tech_icons/Autocad_logo.webp';
+import logoVRay from '../assets/tech_icons/v-ray_logo.webp';
+import logoPhotoshop from '../assets/tech_icons/Adobe Photoshop_logo.webp';
 
 const techItems = [
   { name: '3dsMax', icon: logo3dsMax },
@@ -42,7 +42,7 @@ export default function Skills() {
                 key={item.name} 
                 className="flex flex-col items-center justify-center p-6 bg-foreground/[0.02] rounded-3xl border border-foreground/5 shadow-sm transition-all hover:scale-105 hover:shadow-lg"
               >
-                <img src={item.icon} alt={item.name} className="w-16 h-16 object-contain" />
+                <img src={item.icon} alt={item.name} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />
                 <span className="text-xs font-bold mt-4 uppercase tracking-wider text-foreground/80 whitespace-nowrap">
                   {item.name}
                 </span>

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { portfolioData } from './data/portfolioData';
 
@@ -9,8 +9,10 @@ import Education from './components/Education';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import TextType from './components/TextType';
-import Aurora from './components/Aurora';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+
+// Aurora는 ogl(WebGL) 기반 장식 배경이라 별도 청크로 분리해 초기 번들에서 제외
+const Aurora = lazy(() => import('./components/Aurora'));
 
 function App() {
   const data = portfolioData;
@@ -86,12 +88,14 @@ function App() {
       <section className="flex flex-col items-center justify-center h-screen px-6 overflow-hidden relative bg-[#030303]">
         {/* Dynamic Aurora Background */}
         <div className="absolute inset-0 z-0 opacity-60">
-          <Aurora 
-            colorStops={["#9e9cff", "#524fee", "#2421d8"]}
-            blend={0.5}
-            amplitude={1.0}
-            speed={0.5}
-          />
+          <Suspense fallback={null}>
+            <Aurora
+              colorStops={["#9e9cff", "#524fee", "#2421d8"]}
+              blend={0.5}
+              amplitude={1.0}
+              speed={0.5}
+            />
+          </Suspense>
         </div>
 
         <motion.div 

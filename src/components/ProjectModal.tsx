@@ -121,7 +121,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                       transition={{ delay: 0.3 }}
                       className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter uppercase leading-none flex items-center gap-4"
                     >
-                      {project.logo && <img src={project.logo} alt="logo" className="w-12 h-12 rounded-full bg-white border border-foreground/10 shadow-sm object-contain" />}
+                      {project.logo && <img loading="lazy" decoding="async" src={project.logo} alt="logo" className="w-12 h-12 rounded-full bg-white border border-foreground/10 shadow-sm object-contain" />}
                       {project.name}
                     </motion.h2>
                   </div>
@@ -185,7 +185,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                           <div className="space-y-4 mb-16">
                             <p className="text-[10px] font-black uppercase opacity-30 tracking-widest text-center">Project Exterior</p>
                             <div className="relative overflow-hidden rounded-[2.5rem] bg-foreground/5 border border-foreground/5 shadow-lg">
-                              <img src={detailImages[0]} alt="Thumbnail" className="w-full h-auto" />
+                              <img loading="lazy" decoding="async" src={detailImages[0]} alt="Thumbnail" className="w-full h-auto" />
                             </div>
                           </div>
 
@@ -206,13 +206,13 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                                   <div className="space-y-2">
                                     <p className="text-[10px] font-black uppercase opacity-30 tracking-widest text-center">Floor Plan</p>
                                     <div className="relative overflow-hidden rounded-2xl bg-foreground/5 border border-foreground/5 aspect-[4/3]">
-                                      <img src={setImages[0]} alt="Plan" className="w-full h-full object-cover object-center" />
+                                      <img loading="lazy" decoding="async" src={setImages[0]} alt="Plan" className="w-full h-full object-cover object-center" />
                                     </div>
                                   </div>
                                   <div className="space-y-2">
                                     <p className="text-[10px] font-black uppercase opacity-30 tracking-widest text-center">Perspective View</p>
                                     <div className="relative overflow-hidden rounded-2xl bg-foreground/5 border border-foreground/5 aspect-[4/3]">
-                                      <img src={setImages[1]} alt="Perspective" className="w-full h-full object-cover object-center" />
+                                      <img loading="lazy" decoding="async" src={setImages[1]} alt="Perspective" className="w-full h-full object-cover object-center" />
                                     </div>
                                   </div>
                                 </div>
@@ -221,10 +221,10 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                                 <div className="space-y-6 pt-4">
                                   <p className="text-[10px] font-black uppercase opacity-30 tracking-widest text-center">Detail Visualization</p>
                                   <div className="relative overflow-hidden rounded-[2rem] bg-foreground/5 border border-foreground/5">
-                                    <img src={setImages[2]} alt="Detail 1" className="w-full h-auto" />
+                                    <img loading="lazy" decoding="async" src={setImages[2]} alt="Detail 1" className="w-full h-auto" />
                                   </div>
                                   <div className="relative overflow-hidden rounded-[2rem] bg-foreground/5 border border-foreground/5">
-                                    <img src={setImages[3]} alt="Detail 2" className="w-full h-auto" />
+                                    <img loading="lazy" decoding="async" src={setImages[3]} alt="Detail 2" className="w-full h-auto" />
                                   </div>
                                 </div>
                               </div>
@@ -248,7 +248,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                               <div className="grid grid-cols-1 gap-8">
                                 {group.images.map((img, imgIndex) => (
                                   <div key={imgIndex} className="relative w-full overflow-hidden rounded-[2rem] bg-foreground/5 border border-foreground/5 shadow-lg">
-                                    <img src={img} alt={`${group.label} ${imgIndex + 1}`} className="w-full h-auto" />
+                                    <img loading="lazy" decoding="async" src={img} alt={`${group.label} ${imgIndex + 1}`} className="w-full h-auto" />
                                   </div>
                                 ))}
                               </div>
@@ -273,21 +273,21 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                                 {group.label === "건물 시퀀스 투시도" ? (
                                   <>
                                     <div className="relative w-full overflow-hidden rounded-[2rem] bg-foreground/5 border border-foreground/5 shadow-lg">
-                                      <img src={group.images[0]} alt={`${group.label} 1`} className="w-full h-auto" />
+                                      <img loading="lazy" decoding="async" src={group.images[0]} alt={`${group.label} 1`} className="w-full h-auto" />
                                     </div>
                                     <div className="grid grid-cols-2 gap-4">
                                       <div className="relative w-full overflow-hidden rounded-2xl bg-foreground/5 border border-foreground/5 shadow-md aspect-[16/10]">
-                                        <img src={group.images[1]} alt={`${group.label} 2`} className="w-full h-full object-cover" />
+                                        <img loading="lazy" decoding="async" src={group.images[1]} alt={`${group.label} 2`} className="w-full h-full object-cover" />
                                       </div>
                                       <div className="relative w-full overflow-hidden rounded-2xl bg-foreground/5 border border-foreground/5 shadow-md aspect-[16/10]">
-                                        <img src={group.images[2]} alt={`${group.label} 3`} className="w-full h-full object-cover" />
+                                        <img loading="lazy" decoding="async" src={group.images[2]} alt={`${group.label} 3`} className="w-full h-full object-cover" />
                                       </div>
                                     </div>
                                   </>
                                 ) : (
                                   group.images.map((img, imgIndex) => (
                                     <div key={imgIndex} className="relative w-full overflow-hidden rounded-[2rem] bg-foreground/5 border border-foreground/5 shadow-lg">
-                                      <img src={img} alt={`${group.label} ${imgIndex + 1}`} className="w-full h-auto" />
+                                      <img loading="lazy" decoding="async" src={img} alt={`${group.label} ${imgIndex + 1}`} className="w-full h-auto" />
                                     </div>
                                   ))
                                 )}
@@ -306,17 +306,17 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                               {/* Front View */}
                               <div className="relative w-full overflow-hidden rounded-[2rem] bg-foreground/5 border border-foreground/5 shadow-lg">
                                 <p className="absolute top-4 left-6 z-10 text-[10px] font-black uppercase tracking-widest bg-background/50 backdrop-blur-sm px-3 py-1 rounded-full opacity-60">Front View</p>
-                                <img src={detailImages[0]} alt="Front View" className="w-full h-auto" />
+                                <img loading="lazy" decoding="async" src={detailImages[0]} alt="Front View" className="w-full h-auto" />
                               </div>
                               {/* Left & Right Views */}
                               <div className="grid grid-cols-2 gap-4">
                                 <div className="relative overflow-hidden rounded-2xl bg-foreground/5 border border-foreground/5 shadow-md aspect-[16/10]">
                                   <p className="absolute top-3 left-4 z-10 text-[9px] font-black uppercase tracking-widest bg-background/50 backdrop-blur-sm px-2 py-0.5 rounded-full opacity-60">Left View</p>
-                                  <img src={detailImages[1]} alt="Left View" className="w-full h-full object-cover" />
+                                  <img loading="lazy" decoding="async" src={detailImages[1]} alt="Left View" className="w-full h-full object-cover" />
                                 </div>
                                 <div className="relative overflow-hidden rounded-2xl bg-foreground/5 border border-foreground/5 shadow-md aspect-[16/10]">
                                   <p className="absolute top-3 left-4 z-10 text-[9px] font-black uppercase tracking-widest bg-background/50 backdrop-blur-sm px-2 py-0.5 rounded-full opacity-60">Right View</p>
-                                  <img src={detailImages[2]} alt="Right View" className="w-full h-full object-cover" />
+                                  <img loading="lazy" decoding="async" src={detailImages[2]} alt="Right View" className="w-full h-full object-cover" />
                                 </div>
                               </div>
                             </div>
@@ -329,7 +329,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                             <div className="flex flex-col gap-8">
                               {detailImages.slice(3, 7).map((img, i) => (
                                 <div key={i} className="relative w-full overflow-hidden rounded-[2rem] bg-foreground/5 border border-foreground/5 shadow-lg">
-                                  <img src={img} alt={`Drawing ${i + 1}`} className="w-full h-auto" />
+                                  <img loading="lazy" decoding="async" src={img} alt={`Drawing ${i + 1}`} className="w-full h-auto" />
                                 </div>
                               ))}
                             </div>
@@ -340,7 +340,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                               <h4 className="text-xl font-bold uppercase tracking-tight opacity-80">가구 제작 도면</h4>
                             </div>
                             <div className="relative w-full overflow-hidden rounded-[2rem] bg-foreground/5 border border-foreground/5 shadow-lg">
-                              <img src={detailImages[7]} alt="Furniture Detail Drawing" className="w-full h-auto" />
+                              <img loading="lazy" decoding="async" src={detailImages[7]} alt="Furniture Detail Drawing" className="w-full h-auto" />
                             </div>
                           </div>
                         </div>
@@ -359,7 +359,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                               <div className="grid grid-cols-2 gap-4">
                                 {group.images.map((img, imgIndex) => (
                                   <div key={imgIndex} className="relative w-full overflow-hidden rounded-2xl bg-foreground/5 border border-foreground/5 shadow-md aspect-[4/3]">
-                                    <img src={img} alt={`${group.label} ${imgIndex + 1}`} className="w-full h-full object-cover" />
+                                    <img loading="lazy" decoding="async" src={img} alt={`${group.label} ${imgIndex + 1}`} className="w-full h-full object-cover" />
                                   </div>
                                 ))}
                               </div>
@@ -386,7 +386,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                                 {group.images.front && (
                                   <div className="relative w-full overflow-hidden rounded-[2rem] bg-foreground/5 border border-foreground/5 shadow-lg">
                                     <p className="absolute top-4 left-6 z-10 text-[10px] font-black uppercase tracking-widest bg-background/50 backdrop-blur-sm px-3 py-1 rounded-full opacity-60">Front View</p>
-                                    <img src={group.images.front} alt={`${group.label} Front`} className="w-full h-auto" />
+                                    <img loading="lazy" decoding="async" src={group.images.front} alt={`${group.label} Front`} className="w-full h-auto" />
                                   </div>
                                 )}
                                 
@@ -395,7 +395,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                                   group.images.left && (
                                     <div className="relative w-full overflow-hidden rounded-[2rem] bg-foreground/5 border border-foreground/5 shadow-lg">
                                       <p className="absolute top-4 left-6 z-10 text-[10px] font-black uppercase tracking-widest bg-background/50 backdrop-blur-sm px-3 py-1 rounded-full opacity-60">Top View</p>
-                                      <img src={group.images.left} alt={`${group.label} Top`} className="w-full h-auto" />
+                                      <img loading="lazy" decoding="async" src={group.images.left} alt={`${group.label} Top`} className="w-full h-auto" />
                                     </div>
                                   )
                                 ) : (
@@ -405,13 +405,13 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                                       {group.images.left && (
                                         <div className="relative overflow-hidden rounded-2xl bg-foreground/5 border border-foreground/5 shadow-md aspect-[16/10]">
                                           <p className="absolute top-3 left-4 z-10 text-[9px] font-black uppercase tracking-widest bg-background/50 backdrop-blur-sm px-2 py-0.5 rounded-full opacity-60">Left View</p>
-                                          <img src={group.images.left} alt={`${group.label} Left`} className="w-full h-full object-cover" />
+                                          <img loading="lazy" decoding="async" src={group.images.left} alt={`${group.label} Left`} className="w-full h-full object-cover" />
                                         </div>
                                       )}
                                       {group.images.right && (
                                         <div className="relative overflow-hidden rounded-2xl bg-foreground/5 border border-foreground/5 shadow-md aspect-[16/10]">
                                           <p className="absolute top-3 left-4 z-10 text-[9px] font-black uppercase tracking-widest bg-background/50 backdrop-blur-sm px-2 py-0.5 rounded-full opacity-60">Right View</p>
-                                          <img src={group.images.right} alt={`${group.label} Right`} className="w-full h-full object-cover" />
+                                          <img loading="lazy" decoding="async" src={group.images.right} alt={`${group.label} Right`} className="w-full h-full object-cover" />
                                         </div>
                                       )}
                                     </div>
@@ -436,13 +436,13 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                                   <div className="space-y-4">
                                     <p className="text-[10px] font-black uppercase opacity-30 tracking-widest text-center">Before</p>
                                     <div className="relative overflow-hidden rounded-[2rem] bg-foreground/5 border border-foreground/5 aspect-[4/3] shadow-inner">
-                                      <img src={detailImages[i * 2]} alt="Before" className="w-full h-full object-cover" />
+                                      <img loading="lazy" decoding="async" src={detailImages[i * 2]} alt="Before" className="w-full h-full object-cover" />
                                     </div>
                                   </div>
                                   <div className="space-y-4">
                                     <p className="text-[10px] font-black uppercase text-primary/40 tracking-widest text-center">After (Simulation)</p>
                                     <div className="relative overflow-hidden rounded-[2rem] bg-foreground/5 border border-primary/20 aspect-[4/3] shadow-2xl ring-4 ring-primary/5">
-                                      <img src={detailImages[i * 2 + 1]} alt="After" className="w-full h-full object-cover" />
+                                      <img loading="lazy" decoding="async" src={detailImages[i * 2 + 1]} alt="After" className="w-full h-full object-cover" />
                                     </div>
                                   </div>
                                 </div>
@@ -455,6 +455,8 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                           {detailImages.map((image, index) => (
                             <div key={index} className="relative w-full overflow-hidden rounded-3xl bg-foreground/5">
                               <img
+                                loading="lazy"
+                                decoding="async"
                                 src={image}
                                 alt={`${project.name} detail ${index + 1}`}
                                 className="w-full h-auto object-contain"

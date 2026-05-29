@@ -79,7 +79,7 @@ export default function Extra({ training, blogPosts = [], aiProjects = [] }: Ext
                     </div>
                     {course.image && (
                       <div className="w-16 h-16 rounded-2xl overflow-hidden border border-foreground/5 flex-shrink-0 shadow-sm relative group-hover:shadow-primary/20 transition-all">
-                        <img src={course.image} alt={course.title} className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
+                        <img src={course.image} alt={course.title} loading="lazy" decoding="async" className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
                         <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[1px]">
                           <ImageIcon size={20} className="text-white" />
                         </div>
@@ -186,7 +186,7 @@ export default function Extra({ training, blogPosts = [], aiProjects = [] }: Ext
                                 }}
                                 className="w-16 h-16 rounded-2xl overflow-hidden border border-foreground/5 flex-shrink-0 shadow-sm relative transition-all group-hover:shadow-purple-500/20"
                               >
-                                <img src={post.image} alt={post.title} className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
+                                <img src={post.image} alt={post.title} loading="lazy" decoding="async" className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
                                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[1px]">
                                   <ImageIcon size={20} className="text-white" />
                                 </div>
@@ -228,9 +228,11 @@ export default function Extra({ training, blogPosts = [], aiProjects = [] }: Ext
                 <X size={24} />
               </button>
               <div className="p-4 sm:p-8 flex items-center justify-center">
-                <img 
-                  src={selectedImg} 
-                  alt="Detail View" 
+                <img
+                  src={selectedImg}
+                  alt="Detail View"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto max-h-[80vh] object-contain rounded-xl shadow-xl"
                 />
               </div>

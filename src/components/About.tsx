@@ -30,6 +30,8 @@ export default function About() {
                   <img
                     src={profileImage}
                     alt="CHOI EUN JIN"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-auto group-hover:scale-105 transition-transform duration-1000 ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -84,9 +86,11 @@ export default function About() {
             className="w-full lg:w-12/12 pt-0 lg:pt-[88px]"
           >
             <div className="relative w-full overflow-hidden rounded-[2rem] border border-foreground/5 shadow-2xl">
-              <img 
-                src={aboutMeImage} 
-                alt="About Me Introduction" 
+              <img
+                src={aboutMeImage}
+                alt="About Me Introduction"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto"
               />
               <div className="absolute inset-0 border-[6px] border-white/10 rounded-[2rem] pointer-events-none"></div>

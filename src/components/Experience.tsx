@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useRef, useState, lazy, Suspense } from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
-import ProjectModal from './ProjectModal';
 import type { ProjectData } from './Projects';
+
+// 모달은 무거운 컴포넌트라 첫 오픈 시점까지 청크 로딩을 지연 (코드 스플릿)
+const ProjectModal = lazy(() => import('./ProjectModal'));
 
 interface WorkItem {
   id: number;
@@ -20,6 +22,9 @@ interface ExperienceProps {
 
 export default function Experience({ projects }: ExperienceProps) {
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
+  // 한 번이라도 모달을 연 적 있으면 계속 마운트 유지 → exit 애니메이션 보존하면서도 첫 오픈 전까지 청크 미로딩
+  const modalEverOpened = useRef(false);
+  if (selectedProject) modalEverOpened.current = true;
 
   const cardVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
@@ -56,9 +61,11 @@ export default function Experience({ projects }: ExperienceProps) {
               {/* Project Image Preview */}
               <div className="relative aspect-[16/10] overflow-hidden bg-foreground/5">
                 {proj.thumbnail || (proj.images && proj.images.length > 0) ? (
-                  <img 
-                    src={proj.thumbnail || (proj.images ? proj.images[0] : '')} 
-                    alt={proj.name} 
+                  <img
+                    src={proj.thumbnail || (proj.images ? proj.images[0] : '')}
+                    alt={proj.name}
+                    loading="lazy"
+                    decoding="async"
                     className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
                   />
                 ) : (
@@ -97,11 +104,15 @@ export default function Experience({ projects }: ExperienceProps) {
         </div>
       </div>
 
-      <ProjectModal 
-        isOpen={!!selectedProject} 
-        onClose={() => setSelectedProject(null)} 
-        project={selectedProject} 
-      />
+      {modalEverOpened.current && (
+        <Suspense fallback={null}>
+          <ProjectModal
+            isOpen={!!selectedProject}
+            onClose={() => setSelectedProject(null)}
+            project={selectedProject}
+          />
+        </Suspense>
+      )}
     </section>
   );
 }
